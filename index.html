@@ -1,14 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
     <title>Document</title>
-</head>
-<body>
-    <header class="header" >FFF</header>
-    <main></main>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__info">
+        <p class="header__info-text">
+          График работы достопримечательностей смотрите в разделе «Сегодня
+          доступно с Astana Pass»
+        </p>
+      </div>
+      <div class="header__container">
+        <a href="#" class="logo">
+          <span class="logo__heading">
+            CITY<span class="logo__heading--blue">PASS</span>
+          </span>
+          <span class="logo__text">единый билет туриста</span>
+          <span class="logo__text logo__text--blue">по городу Астана</span>
+        </a>
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#" class="nav__link">Astana Pass</a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">museum Pass</a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">Куда сходить</a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">Куда сходить</a>
+            </li>
+            <li class="nav__item"><a href="#" class="nav__link">Туристу</a></li>
+            <li class="nav__item"><a href="#" class="nav__link">Новости</a></li>
+          </ul>
+        </nav>
+        <div class="header__actions">
+          <button class="header__search">
+            <img src="./assets/icons/search.svg" alt="search button" />
+          </button>
+          <button class="header__location">
+            <img src="./assets//icons/location.svg" alt="location" />
+          </button>
+          <div class="header__lang">
+            <span class="header__lang-text">РУС</span>
+            <img src="./assets/icons/arrow-down.svg" alt="open lang" />
+          </div>
+        </div>
+        <a class="buy buy__link--blue">
+          <span>Купить</span>
+          <img src="./assets/icons/bagtick.svg" alt="bagtick" />
+        </a>
+      </div>
+    </header>
+    <main class="section section__main">
+      <!-- <section class="section main__banner">
+        <div class="slider__container">
+            <div class="slider__item">
+                <img src="./assets/images/main_slider_1.png" alt="Slider item">
+            </div>
+            <div class="slider__item">
+                <img src="./assets/images/main_slider_2.jpg" alt="Slider item">
+            </div>
+        </div>  
+        <button class="slider__button prev-el">&lt</button>
+        <button class="slider__button next-el ">&gt</button>
+      </section> -->
+      <section class="section pass">
+        <div class="pass__container">
+          <div class="pass__item">
+            <img
+              src="./assets/images/astana_pass.png"
+              alt="astana pass"
+              class="pass__image"
+            />
+            <div class="pass__content">
+              <div class="pass__header">
+                <h3 class="pass__time">24 и 72 часа</h3>
+                <h1 class="pass__title">
+                  <span class="pass__city">Astana </span>Pass
+                </h1>
+              </div>
+						<a href="#" class="details details__link--black">Подробнее</a>
+              <p class="pass__text">
+                Единая карта туриста, которая включает в себя лучшие
+                достопримечательности и экскурсии города
+              </p>
+              <div class="pass__action">
+                <a class="buy buy__link--blue buy__link--small">
+                  <span>Купить</span>
+                  <img src="./assets/icons/bagtick.svg" alt="bagtick" />
+                </a>
+                <div class="pass__pricing--blue">
+                  <span class="pass__pricing-text">ОТ</span>
+                  <span class="pass__price">7990</span>
+                  <span class="pass__currency">тнг</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pass__item">
+            <img
+              src="./assets/images/museum_pass.png"
+              alt="museum pass"
+              class="pass__image"
+            />
+            <div class="pass__content">
+              <div class="pass__header">
+                <h3 class="pass__time">24 и 72 часа</h3>
+                <h1 class="pass__title">
+                  <span class="pass__city">Astana</span> Museum Pass
+                </h1>
+              </div>
+						<a href="#" class="details details__link--black">Подробнее</a>
+              <p class="pass__text">
+                Официальная музейная карта туриста, которая включает в себя
+                посещение лучших культурных объектов города
+              </p>
+              <div class="pass__action">
+                <a class="buy buy__link--red buy__link--small">
+                  <span>Купить</span>
+                  <img src="./assets/icons/bagtick.svg" alt="bagtick" />
+                </a>
+                <div class="pass__pricing--red">
+                  <span class="pass__pricing-text">ОТ</span>
+                  <span class="pass__price">1490</span>
+                  <span class="pass__currency">тнг</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pass__item">
+            <img
+              src="./assets/images/summer_pass.png"
+              alt="summer pass"
+              class="pass__image"
+            />
+            <div class="pass__content">
+              <div class="pass__header">
+                <h3 class="pass__time">24 и 72 часа</h3>
+                <h1 class="pass__title">
+                  <span class="pass__city">Summer</span> Pass
+                </h1>
+              </div>
+
+							<a href="#" class="details details__link--black">Подробнее</a>
+             
+							<p class="pass__text">
+                Эксклюзивная карта CityPass, которая позволяет посещать
+                Байтерек, Экспо и Нур-Алем по самой низкой цене.
+              </p>
+              <div class="pass__action">
+                <a class="buy buy__link--blue buy__link--small">
+                  <span>Купить</span>
+                  <img src="./assets/icons/bagtick.svg" alt="bagtick" />
+                </a>
+                <div class="pass__pricing--blue">
+                  <span class="pass__pricing-text">ОТ</span>
+                  <span class="pass__price">1490</span>
+                  <span class="pass__currency">тнг</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section question">
+        <div class="question__item"></div>
+        <div class="question__item"></div>
+        <div class="question__item"></div>
+      </section>
+
+      <section></section>
+      <section></section>
+      <section></section>
+      <section></section>
+      <section></section>
+    </main>
     <footer></footer>
-</body>
+  </body>
 </html>
