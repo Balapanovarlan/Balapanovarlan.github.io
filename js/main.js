@@ -1,62 +1,114 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const slider = document.querySelector('.slider');
-  const track  = document.querySelector('.slider__track');
-  const prev   = document.querySelector('.slider__nav--prev');
-  const next   = document.querySelector('.slider__nav--next');
+class Slider {
+  constructor(root) {
+    this.slider = root;
+    this.track  = root.querySelector('.slider__track');
+    this.prev   = root.querySelector('.slider__nav--prev');
+    this.next   = root.querySelector('.slider__nav--next');
+    
+    // Режим: infinite (true) или finite (false)
+    this.infinite = !root.classList.contains('slider--finite');
 
-  const originals = Array.from(track.children);
-  const firstClone = originals[0].cloneNode(true);
-  const lastClone  = originals[originals.length - 1].cloneNode(true);
-  track.insertBefore(lastClone, originals[0]);
-  track.appendChild(firstClone);
-  const slides = Array.from(track.children);
+    // Только в infinite‑режиме создаём клоны
+    if (this.infinite) {
+      this.setupClones();
+      this.currentIndex = 1;                // клонированный нулевой в начале
+    } else {
+      this.slides       = Array.from(this.track.children);
+      this.currentIndex = 0;                // первый реальный
+    }
 
-  let currentIndex    = 1;      // старт — первый «реальный» слайд
-  let slideWidth      = 0;
-  let isTransitioning = false;  // флаг «в процессе анимации»
+    this.isTransitioning = false;
+    this.onResize        = this.update.bind(this);
+    this.onTransitionEnd = this.onTransitionEnd.bind(this);
 
-  function update() {
-    slideWidth = slider.clientWidth * 0.8;
-    // включаем анимацию
-    track.style.transition = 'transform .5s ease';
-    track.style.transform  = `translateX(${-currentIndex * slideWidth}px)`;
+    // Повесим клики
+    this.prev.addEventListener('click', () => this.move(-1));
+    this.next.addEventListener('click', () => this.move(+1));
+    this.track.addEventListener('transitionend', this.onTransitionEnd);
+    window.addEventListener('resize', this.onResize);
+
+    // Стартовый рендер
+    this.update();
+    this.updateNavButtons();
   }
 
-  // ловим завершение анимации
-  track.addEventListener('transitionend', () => {
-    // сбросим флаг, разрешив новые клики
-    isTransitioning = false;
+  setupClones() {
+    const originals = Array.from(this.track.children);
+    const first  = originals[0].cloneNode(true);
+    const last   = originals[originals.length - 1].cloneNode(true);
 
-    // если мы в клоне «последнего» — без анимации перескакиваем на настоящий
-    if (currentIndex === 0) {
-      track.style.transition = 'none';
-      currentIndex = slides.length - 2;
-      track.style.transform  = `translateX(${-currentIndex * slideWidth}px)`;
+    this.track.insertBefore(last, originals[0]);
+    this.track.appendChild(first);
+
+    this.slides = Array.from(this.track.children);
+  }
+
+  update() {
+    // определяем ширину слайда: 80% или 33% (или маленький — flex:0 0 XX%)
+    const baseRatio = this.slider.classList.contains('slider--multi') ? 0.33 : 0.80;
+    this.slideWidth = this.slider.clientWidth * baseRatio;
+
+    this.track.style.transition = 'transform .5s ease';
+    this.track.style.transform  = `translateX(${-this.currentIndex * this.slideWidth}px)`;
+  }
+
+  onTransitionEnd() {
+    this.isTransitioning = false;
+    
+    // если infinite — «заезд» в клоны
+    if (this.infinite) {
+      if (this.currentIndex === 0) {
+        this.track.style.transition = 'none';
+        this.currentIndex = this.slides.length - 2;
+      }
+      else if (this.currentIndex === this.slides.length - 1) {
+        this.track.style.transition = 'none';
+        this.currentIndex = 1;
+      }
+      this.track.style.transform = `translateX(${-this.currentIndex * this.slideWidth}px)`;
     }
-    // если мы в клоне «первого» — прыгаем на настоящий первый
-    else if (currentIndex === slides.length - 1) {
-      track.style.transition = 'none';
-      currentIndex = 1;
-      track.style.transform  = `translateX(${-currentIndex * slideWidth}px)`;
+
+    this.updateNavButtons();
+  }
+
+  move(direction) {
+    // direction: +1 или -1
+    if (this.isTransitioning) return;
+    this.isTransitioning = true;
+
+    // в finite‑режиме блокируем выход за границы
+    if (!this.infinite) {
+      const maxIndex = this.slides.length - 1;
+      const nextIndex = this.currentIndex + direction;
+      if (nextIndex < 0 || nextIndex > maxIndex) {
+        this.isTransitioning = false;
+        return;
+      }
+      this.currentIndex = nextIndex;
+      this.update();
+      this.updateNavButtons();
+    } else {
+      // infinite режим — просто двигаем и «заезжаем» в клоны
+      this.currentIndex += direction;
+      this.update();
     }
-  });
+  }
 
-  prev.addEventListener('click', () => {
-    if (isTransitioning) return;        // блокируем «два клика в одну анимацию»
-    isTransitioning = true;
-    currentIndex--;                     // уходим влево
-    update();
-  });
+  updateNavButtons() {
+    if (this.infinite) {
+      // у infinite‑режима кнопки всегда активны
+      this.prev.classList.remove('disabled');
+      this.next.classList.remove('disabled');
+    } else {
+      const max = this.slides.length - 1;
+      // дизейблим кнопки на концах
+      this.prev.classList.toggle('disabled', this.currentIndex === 0);
+      this.next.classList.toggle('disabled', this.currentIndex === max);
+    }
+  }
+}
 
-  next.addEventListener('click', () => {
-    if (isTransitioning) return;
-    isTransitioning = true;
-    currentIndex++;                     // уходим вправо
-    update();
-  });
-
-  window.addEventListener('resize', update);
-
-  // инициализация
-  update();
+// Инициализация для всех `.slider` на странице
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.slider').forEach(el => new Slider(el));
 });
