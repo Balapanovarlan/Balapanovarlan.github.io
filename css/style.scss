@@ -518,6 +518,79 @@ button,
     }
 }
 
+.faq{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    &__heading{
+        font-size: 32px;
+    }
+    // &__container{
+    //     border-radius: 15px;
+    //     box-shadow: 0 6px 10px rgba($color-gray-light, 0.65);
+    //     padding: 28px 28px;
+    // }
+}
+
+.accordion{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    &__item{
+        padding: 24px 32px;
+        border-radius: 15px;
+        box-shadow: 0px 6px 15px rgba($color-gray-light,0.3);
+        cursor: pointer;
+    }
+    &__header{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        div{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+    }
+    &__arrow{
+        transition: transform .7s ease-in-out;
+    }
+    &__heading{
+        font-size: 20px;
+        font-weight: 600;
+    }
+    &__body{
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height .7s ease-in-out;
+    }
+    &__body.is-expanded{
+        max-height: 1000px;
+    }
+    &__content-wrapper{
+        padding: 27px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 46px;
+    }
+    &__content{
+        display: flex;
+        gap: 15px;
+    }
+    &__point{
+        width: 100%;
+        min-width: 20px;
+        max-width: 20px;
+        height: 20px;
+        border-radius:100%;
+        background-color: $color-blue;
+    }
+    &__text{
+        font-size: 14px;
+    }
+}
+
 .instagram{
     display: flex;
     flex-direction: column;
@@ -619,4 +692,8 @@ button,
         justify-content: space-around;
         padding: 0 10px;
     }
+}
+
+.hidden{
+    display: none;
 }

@@ -112,3 +112,33 @@ class Slider {
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.slider').forEach(el => new Slider(el));
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const accordions = document.querySelectorAll('.accordion__item');
+
+  accordions.forEach(item => {
+    const header = item.querySelector('.accordion__header');
+    const body   = item.querySelector('.accordion__body');
+    const arrow  = header.querySelector('.accordion__arrow');
+
+    header.addEventListener('click', () => {
+      const isOpen = body.classList.contains('is-expanded');
+
+      // Сначала закрываем все
+      accordions.forEach(otherItem => {
+        const otherBody = otherItem.querySelector('.accordion__body');
+        const otherArrow = otherItem.querySelector('.accordion__header .accordion__arrow');
+        otherBody.classList.remove('is-expanded');
+        otherArrow.style.transform = ''; // убираем поворот
+      });
+
+      // Если ранее был закрыт — открываем именно этот
+      if (!isOpen) {
+        body.classList.add('is-expanded');
+        // Поворачиваем стрелку вниз → вверх
+        arrow.style.transform = 'rotate(180deg)';
+      }
+    });
+  });
+});
