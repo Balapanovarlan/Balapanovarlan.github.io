@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <link rel="stylesheet" href="./css/style.css" />
     <title>Document</title>
   </head>
@@ -52,7 +52,7 @@
             <img src="./assets/icons/arrow-down.svg" alt="open lang" />
           </div>
         </div>
-        <a class="buy buy__link--blue">
+        <a href="#" class="buy buy__link--blue">
           <span>Купить</span>
           <img src="./assets/icons/bagtick.svg" alt="bagtick" />
         </a>
@@ -120,7 +120,7 @@
                 достопримечательности и экскурсии города
               </p>
               <div class="pass__action">
-                <a class="buy buy__link--blue buy__link--small">
+                <a href="#" class="buy buy__link--blue buy__link--small">
                   <span>Купить</span>
                   <img src="./assets/icons/bagtick.svg" alt="bagtick" />
                 </a>
@@ -151,7 +151,7 @@
                 посещение лучших культурных объектов города
               </p>
               <div class="pass__action">
-                <a class="buy buy__link--red buy__link--small">
+                <a href="#" class="buy buy__link--red buy__link--small">
                   <span>Купить</span>
                   <img src="./assets/icons/bagtick.svg" alt="bagtick" />
                 </a>
@@ -184,7 +184,7 @@
                 Байтерек, Экспо и Нур-Алем по самой низкой цене.
               </p>
               <div class="pass__action">
-                <a class="buy buy__link--blue buy__link--small">
+                <a href="#" class="buy buy__link--blue buy__link--small">
                   <span>Купить</span>
                   <img src="./assets/icons/bagtick.svg" alt="bagtick" />
                 </a>
@@ -250,13 +250,22 @@
           </p>
         </div>
         <div class="popular__collection">
+
           <div class="popular__item">
-            <div>
+            <div class="popular__action">
+							<div class="popular__filter"></div>
               <img
                 src="./assets/images/popular_1.png"
                 alt="red bus"
                 class="popular__image"
               />
+							<div class="popular__content">
+								<div class="popular__item-status">
+									<img src="./assets/icons/top-arrow.svg" alt="On top"/>
+									<img src="./assets/icons/free-button 1.png" alt="Free"/>
+								</div>
+   	            <a href="#" class="details details__link--blue">Подробнее</a>
+							</div>
             </div>
             <h3 class="popular__item-title">
               Экскурсия на двухэтажном автобусе Red Bus
@@ -264,23 +273,39 @@
           </div>
 
           <div class="popular__item">
-            <div class="popular-action">
+            <div class="popular__action">
+							<div class="popular__filter"></div>
               <img
                 src="./assets/images/popular_2.png"
                 alt="Water Walk"
                 class="popular__image"
               />
+							<div class="popular__content">
+								<div class="popular__item-status">
+									<img src="./assets/icons/top-arrow.svg" alt="On top">
+									<img src="./assets/icons/free-button 1.png" alt="Free">
+								</div>
+   	            <a href="#" class="details details__link--blue">Подробнее</a>
+							</div>
             </div>
             <h3>Водные прогулки на теплоходах по реке Ишим</h3>
           </div>
 
           <div class="popular__item">
             <div class="popular__action">
+							<div class="popular__filter"></div>
               <img
                 src="./assets/images/popular_3.png"
                 alt="nur-alem"
                 class="popular__image"
               />
+							<div class="popular__content">
+								<div class="popular__item-status">
+									<img src="./assets/icons/top-arrow.svg" alt="On top"/>
+									<img src="./assets/icons/free-button 1.png" alt="Free"/>
+								</div>
+   	            <a href="#" class="details details__link--blue">Подробнее</a>
+							</div>
             </div>
             <h3 class="popular__item-title">
               Музей энергии будущего «Нур-Алем» (ЭКСПО)
@@ -289,11 +314,19 @@
 
           <div class="popular__item">
             <div class="popular__action">
+							<div class="popular__filter"></div>
               <img
                 src="./assets/images/popular_4.png"
                 alt="jungle"
                 class="popular__image"
               />
+							<div class="popular__content">
+								<div class="popular__item-status">
+									<img src="./assets/icons/top-arrow.svg" alt="On top"/>
+									<img src="./assets/icons/free-button 1.png" alt="Free"/>
+								</div>
+   	            <a href="#" class="details details__link--blue">Подробнее</a>
+							</div>
             </div>
             <h3 class="popular__item-title">Театр аниматрониксов «Джунгли»</h3>
           </div>
@@ -443,7 +476,9 @@
 				<div class="instagram">
 					<div class="instagram__heading">
 						<h1 class="instagram__header">Подписывайтесь на нас в Instagram</h1> 
-						<img src="./assets/icons/instagram.svg" alt="insta icon" class="instagram__icon">
+						<a href="#">
+							<img src="./assets/icons/instagram.svg" alt="insta icon" class="instagram__icon">
+						</a>
 					</div>
 					<div class="instagram__explore">
 						<div class="instagram__item">
@@ -614,9 +649,90 @@
 					</div>
 				</div>
 			</section>
-      <section></section>
     </main>
-    <footer></footer>
+
+    <footer class="footer">
+			<div class="footer__wrapper">
+
+				<div class="footer__container">
+					<div class="footer__main">
+						<div class="footer__main-item">
+							<h2 class="footer__title">Astana Pass</h2>
+							<ul class="footer__list">
+								<li class="footer__list-item"><a href="#">О городе</a></li>
+								<li class="footer__list-item"><a href="#">Как это работает</a></li>
+								<li class="footer__list-item"><a href="#">Пользовательское соглашение</a></li>
+								<li class="footer__list-item"><a href="#">3D туры</a></li>
+								<li class="footer__list-item"><a href="#">Бесплатные события</a></li>
+								<li class="footer__list-item"><a href="#">Правила оплаты</a></li>
+								<li class="footer__list-item"><a href="#">Возврат покупок</a></li>
+							</ul>
+						</div>
+						<div class="footer__main-item">
+							<h2 class="footer__title">Партнёрам</h2>
+							<ul class="footer__list">
+								<li class="footer__list-item"><a href="#">Стать партнером CityPass</a></li>
+								<li class="footer__list-item"><a href="#">Корпоративным клиентам</a></li>
+								<li class="footer__list-item"><a href="#">Проверка карты</a></li>
+							</ul>
+							<div class="footer__social">
+								<a href="#">
+									<img src="./assets/icons/youtube.svg" alt="youtube">
+								</a> 
+								<a href="#">
+									<img src="./assets/icons/instagram.svg" alt="instagram">
+								</a>
+								<a href="#">
+									<img src="./assets/icons/facebook.svg" alt="facebook">
+								</a>
+							</div>
+							<a href="#" class="subscribe-link">Подписаться на рассылку</a>
+						</div>
+						<div class="footer__main-item">
+								<h2 class="footer__title">Дополнительно</h2>
+								<ul class="footer__list">
+									<li class="footer__list-item"><a href="#">Разработка сайтов</a></li>
+									<li class="footer__list-item"><a href="#">Реклама на сайте</a></li>
+								</ul>
+						</div>
+						<div class="footer__action">
+							<div class="footer__contacts">
+								<div class="footer__contacts-item">
+									<img src="./assets/icons/sms.png" alt="email">
+									<span>info@citypass.kz</span>
+								</div>
+								<div class="footer__contacts-item">
+									<img src="./assets/icons/call.png" alt="call">
+									<span>8 7172 79-04-39</span>
+								</div>
+								<a href="#" class="call-link">
+									<img src="./assets/icons/callcalling.png" alt="call" >
+									<span>Заказать звонок</span>
+								</a>
+							</div>
+							<div class="footer__download">
+								<div class="footer__download-item">
+									<a href="#">
+										<img src="./assets/images/app_store.png" alt="Google Play">
+									</a>
+									<img src="./assets/images/QR_1.png" alt="">					
+								</div>
+								<div class="footer__download-item">
+									<a href="#">
+										<img src="./assets/images/google_play.png" alt="App ">
+									</a>
+									<img src="./assets/images/QR_2.png" alt="">					
+								</div>
+							</div>
+						</div>
+					</div>
+					<span class="footer__since">© 2023 «CityPass Kazakhstan»</span>
+				</div>
+			</div>
+			<div class="footer__banner">
+				<img src="./assets/images/footer_image.png" alt="astana_pass" >
+			</div>
+		</footer>
     <script src="./js/main.js"></script>
   </body>
 </html>

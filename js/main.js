@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const body   = item.querySelector('.accordion__body');
     const arrow  = header.querySelector('.accordion__arrow');
 
-    header.addEventListener('click', () => {
+    item.addEventListener('click', () => {
       const isOpen = body.classList.contains('is-expanded');
 
       // Сначала закрываем все
@@ -133,10 +133,9 @@ document.addEventListener('DOMContentLoaded', () => {
         otherArrow.style.transform = ''; // убираем поворот
       });
 
-      // Если ранее был закрыт — открываем именно этот
       if (!isOpen) {
         body.classList.add('is-expanded');
-        // Поворачиваем стрелку вниз → вверх
+        // Поворачиваем стрелку
         arrow.style.transform = 'rotate(180deg)';
       }
     });
