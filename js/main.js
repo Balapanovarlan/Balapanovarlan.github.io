@@ -141,3 +141,37 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const langToggle = document.querySelector('.header__lang-current');
+  const langDropdown = document.querySelector('.header__lang-dropdown');
+  const langOptions = document.querySelectorAll('.header__lang-option');
+
+  // Переключение видимости popover
+  langToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    langDropdown.classList.toggle('is-open');
+    langToggle.classList.toggle('is-open');
+  });
+
+  // Выбор языка
+  langOptions.forEach(option => {
+    option.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const lang = option.dataset.lang;
+      document.querySelector('.header__lang-text').textContent = 
+        lang === 'KZ' ? 'ҚАЗ' : lang === 'RU' ? 'РУС' : 'ENG';
+      langDropdown.classList.remove('is-open');
+      langToggle.classList.remove('is-open');
+    });
+  });
+
+  // Закрытие popover при клике вне его
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.header__lang')) {
+      langDropdown.classList.remove('is-open');
+      langToggle.classList.remove('is-open');
+    }
+  });
+});

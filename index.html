@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
     <title>Document</title>
   </head>
@@ -48,8 +48,19 @@
             <img src="./assets//icons/location.svg" alt="location" />
           </button>
           <div class="header__lang">
-            <span class="header__lang-text">РУС</span>
-            <img src="./assets/icons/arrow-down.svg" alt="open lang" />
+            <button class="header__lang-current">
+              <span class="header__lang-text">РУС</span>
+              <img
+                src="./assets/icons/arrow-down.svg"
+                alt="open lang"
+                class="header__lang-arrow"
+              />
+            </button>
+            <div class="header__lang-dropdown">
+              <button class="header__lang-option" data-lang="KZ">ҚАЗ</button>
+              <button class="header__lang-option" data-lang="RU">РУС</button>
+              <button class="header__lang-option" data-lang="EN">ENG</button>
+            </div>
           </div>
         </div>
         <a href="#" class="buy buy__link--blue">
@@ -250,22 +261,21 @@
           </p>
         </div>
         <div class="popular__collection">
-
           <div class="popular__item">
             <div class="popular__action">
-							<div class="popular__filter"></div>
+              <div class="popular__filter"></div>
               <img
                 src="./assets/images/popular_1.png"
                 alt="red bus"
                 class="popular__image"
               />
-							<div class="popular__content">
-								<div class="popular__item-status">
-									<img src="./assets/icons/top-arrow.svg" alt="On top"/>
-									<img src="./assets/icons/free-button 1.png" alt="Free"/>
-								</div>
-   	            <a href="#" class="details details__link--blue">Подробнее</a>
-							</div>
+              <div class="popular__content">
+                <div class="popular__item-status">
+                  <img src="./assets/icons/top-arrow.svg" alt="On top" />
+                  <img src="./assets/icons/free-button 1.png" alt="Free" />
+                </div>
+                <a href="#" class="details details__link--blue">Подробнее</a>
+              </div>
             </div>
             <h3 class="popular__item-title">
               Экскурсия на двухэтажном автобусе Red Bus
@@ -274,38 +284,38 @@
 
           <div class="popular__item">
             <div class="popular__action">
-							<div class="popular__filter"></div>
+              <div class="popular__filter"></div>
               <img
                 src="./assets/images/popular_2.png"
                 alt="Water Walk"
                 class="popular__image"
               />
-							<div class="popular__content">
-								<div class="popular__item-status">
-									<img src="./assets/icons/top-arrow.svg" alt="On top">
-									<img src="./assets/icons/free-button 1.png" alt="Free">
-								</div>
-   	            <a href="#" class="details details__link--blue">Подробнее</a>
-							</div>
+              <div class="popular__content">
+                <div class="popular__item-status">
+                  <img src="./assets/icons/top-arrow.svg" alt="On top" />
+                  <img src="./assets/icons/free-button 1.png" alt="Free" />
+                </div>
+                <a href="#" class="details details__link--blue">Подробнее</a>
+              </div>
             </div>
             <h3>Водные прогулки на теплоходах по реке Ишим</h3>
           </div>
 
           <div class="popular__item">
             <div class="popular__action">
-							<div class="popular__filter"></div>
+              <div class="popular__filter"></div>
               <img
                 src="./assets/images/popular_3.png"
                 alt="nur-alem"
                 class="popular__image"
               />
-							<div class="popular__content">
-								<div class="popular__item-status">
-									<img src="./assets/icons/top-arrow.svg" alt="On top"/>
-									<img src="./assets/icons/free-button 1.png" alt="Free"/>
-								</div>
-   	            <a href="#" class="details details__link--blue">Подробнее</a>
-							</div>
+              <div class="popular__content">
+                <div class="popular__item-status">
+                  <img src="./assets/icons/top-arrow.svg" alt="On top" />
+                  <img src="./assets/icons/free-button 1.png" alt="Free" />
+                </div>
+                <a href="#" class="details details__link--blue">Подробнее</a>
+              </div>
             </div>
             <h3 class="popular__item-title">
               Музей энергии будущего «Нур-Алем» (ЭКСПО)
@@ -314,425 +324,630 @@
 
           <div class="popular__item">
             <div class="popular__action">
-							<div class="popular__filter"></div>
+              <div class="popular__filter"></div>
               <img
                 src="./assets/images/popular_4.png"
                 alt="jungle"
                 class="popular__image"
               />
-							<div class="popular__content">
-								<div class="popular__item-status">
-									<img src="./assets/icons/top-arrow.svg" alt="On top"/>
-									<img src="./assets/icons/free-button 1.png" alt="Free"/>
-								</div>
-   	            <a href="#" class="details details__link--blue">Подробнее</a>
-							</div>
+              <div class="popular__content">
+                <div class="popular__item-status">
+                  <img src="./assets/icons/top-arrow.svg" alt="On top" />
+                  <img src="./assets/icons/free-button 1.png" alt="Free" />
+                </div>
+                <a href="#" class="details details__link--blue">Подробнее</a>
+              </div>
             </div>
             <h3 class="popular__item-title">Театр аниматрониксов «Джунгли»</h3>
           </div>
         </div>
       </section>
-      <section class="section ">
-				<div class="magazine">
-					<div class="magazine__heading">
-						<div class="magazine__typography">
-							<h1 class="magazine__header">ЖУРНАЛ</h1>
-							<p class="magazine__text">В этом разделе вы можете прочесть много интересного о Казахстане: о достопримечательностях и красивых пейзажах</p>
-						</div>
-						<a href="#" class="see-all-link">Смотреть всё</a>
-					</div>
-					<div class="slider slider--multi slider--finite">
-						<div class="slider__track">
-							<div class="slider__item slider__item--small">
-									<div class="article">
-										<img src="./assets/images/magazine_1.png" alt="Dubai" class="article__image" />
-										<div class="article__content">
-											<span class="article__date">16.02.2023</span>
-											<h3 class="article__title">Назван топ-10 направлений для туризма по версии TripAdvisor</h3>
-											<p class="article__text">Сайт путешествий TripAdvisor составил рейтинг Travellers’ Choice Awards (“Выбор туристов”), в котором собрал наиболее ...</p>
-										</div>
-										<a href="#" class="details details__link--black">Подробнее</a>
-									</div>
-							</div>
-							<div class="slider__item slider__item--small">
-									<div class="article">
-										<img src="./assets/images/magazine_2.png" alt="hospital place" class="article__image" />
-										<div class="article__content">
-											<span class="article__date">16.02.2023</span>
-											<h3 class="article__title">Названы самые гостеприимные места планеты</h3>
-											<p class="article__text">В путешествиях важны не только новые впечатления, но и комфортные условия для восстановления после дня...</p>
-										</div>
-									<a href="#" class="details details__link--black">Подробнее</a>
-								</div>
-							</div>
-							<div class="slider__item slider__item--small">
-									<div class="article">
-										<img src="./assets/images/magazine_3.png" alt="iceberg" class="article__image" />
-										<div class="article__content">
-											<span class="article__date">16.02.2023</span>
-											<h3 class="article__title">«Удивительный айсберг». В Алматинской области «снова появился «ледяной вулкан»</h3>
-											<p class="article__text">Казахстанцы делятся новыми красивыми фотографиями из села Кеген Алматинской области. Место славится...</p>
-										</div>
-									<a href="#" class="details details__link--black">Подробнее</a>
-								</div>
-							</div>
-							<div class="slider__item--small">
-									<div class="article">
-										<img src="./assets/images/magazine_3.png" alt="iceberg" class="article__image" />
-										<div class="article__content">
-											<span class="article__date">16.02.2023</span>
-											<h3 class="article__title">«Удивительный айсберг». В Алматинской области «снова появился «ледяной вулкан»</h3>
-											<p class="article__text">Казахстанцы делятся новыми красивыми фотографиями из села Кеген Алматинской области. Место славится...</p>
-										</div>
-									<a href="#" class="details details__link--black">Подробнее</a>
-								</div>
-							</div>
-						</div>
-						<!-- Кнопки навигации -->
-						<button class="slider__nav slider__nav--prev" type="button">
-							&lt;
-						</button>
-						<button class="slider__nav slider__nav--next" type="button">
-							&gt;
-						</button>
-					</div>
-				</div>
+      <section class="section">
+        <div class="magazine">
+          <div class="magazine__heading">
+            <div class="magazine__typography">
+              <h1 class="magazine__header">ЖУРНАЛ</h1>
+              <p class="magazine__text">
+                В этом разделе вы можете прочесть много интересного о
+                Казахстане: о достопримечательностях и красивых пейзажах
+              </p>
+            </div>
+            <a href="#" class="see-all-link">Смотреть всё</a>
+          </div>
+          <div class="slider slider--multi slider--finite">
+            <div class="slider__track">
+              <div class="slider__item slider__item--small">
+                <div class="article">
+                  <img
+                    src="./assets/images/magazine_1.png"
+                    alt="Dubai"
+                    class="article__image"
+                  />
+                  <div class="article__content">
+                    <span class="article__date">16.02.2023</span>
+                    <h3 class="article__title">
+                      Назван топ-10 направлений для туризма по версии
+                      TripAdvisor
+                    </h3>
+                    <p class="article__text">
+                      Сайт путешествий TripAdvisor составил рейтинг Travellers’
+                      Choice Awards (“Выбор туристов”), в котором собрал
+                      наиболее ...
+                    </p>
+                  </div>
+                  <a href="#" class="details details__link--black">Подробнее</a>
+                </div>
+              </div>
+              <div class="slider__item slider__item--small">
+                <div class="article">
+                  <img
+                    src="./assets/images/magazine_2.png"
+                    alt="hospital place"
+                    class="article__image"
+                  />
+                  <div class="article__content">
+                    <span class="article__date">16.02.2023</span>
+                    <h3 class="article__title">
+                      Названы самые гостеприимные места планеты
+                    </h3>
+                    <p class="article__text">
+                      В путешествиях важны не только новые впечатления, но и
+                      комфортные условия для восстановления после дня...
+                    </p>
+                  </div>
+                  <a href="#" class="details details__link--black">Подробнее</a>
+                </div>
+              </div>
+              <div class="slider__item slider__item--small">
+                <div class="article">
+                  <img
+                    src="./assets/images/magazine_3.png"
+                    alt="iceberg"
+                    class="article__image"
+                  />
+                  <div class="article__content">
+                    <span class="article__date">16.02.2023</span>
+                    <h3 class="article__title">
+                      «Удивительный айсберг». В Алматинской области «снова
+                      появился «ледяной вулкан»
+                    </h3>
+                    <p class="article__text">
+                      Казахстанцы делятся новыми красивыми фотографиями из села
+                      Кеген Алматинской области. Место славится...
+                    </p>
+                  </div>
+                  <a href="#" class="details details__link--black">Подробнее</a>
+                </div>
+              </div>
+              <div class="slider__item--small">
+                <div class="article">
+                  <img
+                    src="./assets/images/magazine_3.png"
+                    alt="iceberg"
+                    class="article__image"
+                  />
+                  <div class="article__content">
+                    <span class="article__date">16.02.2023</span>
+                    <h3 class="article__title">
+                      «Удивительный айсберг». В Алматинской области «снова
+                      появился «ледяной вулкан»
+                    </h3>
+                    <p class="article__text">
+                      Казахстанцы делятся новыми красивыми фотографиями из села
+                      Кеген Алматинской области. Место славится...
+                    </p>
+                  </div>
+                  <a href="#" class="details details__link--black">Подробнее</a>
+                </div>
+              </div>
+            </div>
+            <!-- Кнопки навигации -->
+            <button class="slider__nav slider__nav--prev" type="button">
+              &lt;
+            </button>
+            <button class="slider__nav slider__nav--next" type="button">
+              &gt;
+            </button>
+          </div>
+        </div>
       </section>
-			<section class="section">
-				<div class="faq ">
-					<h1 class="faq__heading">FAQ</h1>
-					<div class="faq__container">
-						<div class="accordion">
-							<div class="accordion__item">
-								<div class="accordion__header">
-									<div>
-										<img  src="./assets/icons/Artboard-Copy.svg" alt="">
-										<h1 class="accordion__heading">Как пользоваться картой Astana Citypass?</h1>
-									</div>
-									<img src="./assets/icons/arrow-down.svg" alt="open" class="accordion__arrow">
-								</div>
-								<div class="accordion__body ">
-									<div class="accordion__content-wrapper">
-										<div class="accordion__content">
-											<div class="accordion__point"></div>
-											<div class="accordion__text">Приобретите онлайн карту с QR кодом на сайте, либо пластиковую карту в пунктах продаж.</div>
-										</div>
-										<div class="accordion__content">
-											<div class="accordion__point"></div>
-											<div class="accordion__text">В течение срока действия карты (24 или 72 часа) вы сможете посетить все музеи, достопримечательности, экскурсии. Каждый объект бесплатно вы можете посетить только один раз.</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="accordion__item">
-								<div class="accordion__header">
-									<div>
-										<img  src="./assets/icons/Artboard-Copy.svg" alt="">
-										<h1 class="accordion__heading">Как пользоваться картой Astana Citypass?</h1>
-									</div>
-									<img src="./assets/icons/arrow-down.svg" alt="open" class="accordion__arrow">
-								</div>
-								<div class="accordion__body">
-									<div class="accordion__content-wrapper">
-										<div class="accordion__content">
-											<div class="accordion__point"></div>
-											<div class="accordion__text">Приобретите онлайн карту с QR кодом на сайте, либо пластиковую карту в пунктах продаж.</div>
-										</div>
-										<div class="accordion__content">
-											<div class="accordion__point"></div>
-											<div class="accordion__text">В течение срока действия карты (24 или 72 часа) вы сможете посетить все музеи, достопримечательности, экскурсии. Каждый объект бесплатно вы можете посетить только один раз.</div>
-									</div>
-
-									</div>
-								</div>
-							</div>
-							<div class="accordion__item">
-								<div class="accordion__header">
-									<div>
-										<img  src="./assets/icons/Artboard-Copy.svg" alt="">
-										<h1 class="accordion__heading">Как пользоваться картой Astana Citypass?</h1>
-									</div>
-									<img src="./assets/icons/arrow-down.svg" alt="open" class="accordion__arrow">
-								</div>
-								<div class="accordion__body">
-									<div class="accordion__content-wrapper">
-										<div class="accordion__content">
-											<div class="accordion__point"></div>
-											<div class="accordion__text">Приобретите онлайн карту с QR кодом на сайте, либо пластиковую карту в пунктах продаж.</div>
-										</div>
-										<div class="accordion__content">
-											<div class="accordion__point"></div>
-											<div class="accordion__text">В течение срока действия карты (24 или 72 часа) вы сможете посетить все музеи, достопримечательности, экскурсии. Каждый объект бесплатно вы можете посетить только один раз.</div>
-										</div>
-									</div>
-
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
       <section class="section">
-				<div class="instagram">
-					<div class="instagram__heading">
-						<h1 class="instagram__header">Подписывайтесь на нас в Instagram</h1> 
-						<a href="#">
-							<img src="./assets/icons/instagram.svg" alt="insta icon" class="instagram__icon">
-						</a>
-					</div>
-					<div class="instagram__explore">
-						<div class="instagram__item">
-							<div class="instagram__filter"></div>
-							<img src="./assets/images/insta_post_1.png" alt="" class="instagram__image">
-							<div class="instagram__item-content">
-								<div class="instagram__reaction">
-									<div class="instagram__likes">
-										<img src="./assets/icons/heart.svg" alt="like">
-										<span>248.1K</span>
-									</div>
-									<div class="instagram__comments">
-										<img src="./assets/icons/commentary.svg" alt="comment">
-										<span>3</span>
-									</div>
-								</div>
-								<p class="instagram__description">Рады представить Вам новинку смарт карты - Museum Pass 🌟Museum Pass – это Ваша возможность свободного и комфортного входа во все культурные объекты столицы.Museum Pass позволяет создать удобный маршрут по изучению музеев города и сэкономить до 20% времени и средств в 2 раза.Пластиковая карта и онлайн карта действует 24 часа с момента первого посещения объекта. Предъявляйте смарт-карту или QR код на кассах объектов для свободного прохода.Дата запуска - 10 апреля 2023 года 😉А кого бы Вы позвали с собой в музей по нашей карте? 🪄</p>
-							</div>
-						</div>
-
-						<div class="instagram__item">
-								<div class="instagram__filter"></div>
-								<img src="./assets/images/insta_post_2.png" alt="" class="instagram__image">
-								<div class="instagram__item-content">
-									<div class="instagram__reaction">
-										<div class="instagram__likes">
-											<img src="./assets/icons/heart.svg" alt="like">
-											<span>248.1K</span>
-										</div>
-										<div class="instagram__comments">
-											<img src="./assets/icons/commentary.svg" alt="comment">
-											<span>3</span>
-										</div>
-									</div>
-										<p class="instagram__description">Рады представить Вам новинку смарт карты - Museum Pass 🌟Museum Pass – это Ваша возможность свободного и комфортного входа во все культурные объекты столицы.Museum Pass позволяет создать удобный маршрут по изучению музеев города и сэкономить до 20% времени и средств в 2 раза.Дата запуска - 10 апреля 2023 года 😉А кого бы Вы позвали с собой в музей по нашей карте?</p>
-								</div>
-							
-						</div>
-
-						<div class="instagram__item">
-							<div class="instagram__filter"></div>
-							<img src="./assets/images/insta_post_3.png" alt="" class="instagram__image">
-							<div class="instagram__item-content">
-								<div class="instagram__reaction">
-									<div class="instagram__likes">
-										<img src="./assets/icons/heart.svg" alt="like">
-										<span>248.1K</span>
-									</div>
-									<div class="instagram__comments">
-										<img src="./assets/icons/commentary.svg" alt="comment">
-										<span>3</span>
-									</div>
-								</div>
-									<p class="instagram__description">Рады представить Вам новинку смарт карты - Museum Pass 🌟Museum Pass – это Ваша возможность свободного и комфортного входа во все культурные объекты столицы.Museum Pass позволяет создать удобный маршрут по изучению музеев города и сэкономить до 20% времени и средств в 2 раза.Дата запуска - 10 апреля 2023 года 😉А кого бы Вы позвали с собой в музей по нашей карте?</p>
-							</div>
-						</div>
-
-						<div class="instagram__item">
-							<div class="instagram__filter"></div>
-							<img src="./assets/images/insta_post_4.png" alt="" class="instagram__image">
-							<div class="instagram__item-content">
-								<div class="instagram__reaction">
-									<div class="instagram__likes">
-										<img src="./assets/icons/heart.svg" alt="like">
-										<span>248.1K</span>
-									</div>
-									<div class="instagram__comments">
-										<img src="./assets/icons/commentary.svg" alt="comment">
-										<span>3</span>
-									</div>
-								</div>
-									<p class="instagram__description">Рады представить Вам новинку смарт карты - Museum Pass 🌟Museum Pass – это Ваша возможность свободного и комфортного входа во все культурные объекты столицы.Museum Pass позволяет создать удобный маршрут по изучению музеев города и сэкономить до 20% времени и средств в 2 раза.Дата запуска - 10 апреля 2023 года 😉А кого бы Вы позвали с собой в музей по нашей карте?</p>
-							</div>
-						</div>
-
-						<div class="instagram__item">
-							<div class="instagram__filter"></div>
-							<img src="./assets/images/insta_post_5.png" alt="" class="instagram__image">
-							<div class="instagram__item-content">
-								<div class="instagram__reaction">
-									<div class="instagram__likes">
-										<img src="./assets/icons/heart.svg" alt="like">
-										<span>248.1K</span>
-									</div>
-									<div class="instagram__comments">
-										<img src="./assets/icons/commentary.svg" alt="comment">
-										<span>3</span>
-									</div>
-								</div>
-									<p class="instagram__description">Рады представить Вам новинку смарт карты - Museum Pass 🌟Museum Pass – это Ваша возможность свободного и комфортного входа во все культурные объекты столицы.Museum Pass позволяет создать удобный маршрут по изучению музеев города и сэкономить до 20% времени и средств в 2 раза.Дата запуска - 10 апреля 2023 года 😉А кого бы Вы позвали с собой в музей по нашей карте?</p>
-							</div>
-						</div>
-
-						<div class="instagram__item">
-							<div class="instagram__filter"></div>
-							<img src="./assets/images/insta_post_6.png" alt="" class="instagram__image">
-							<div class="instagram__item-content">
-								<div class="instagram__reaction">
-									<div class="instagram__likes">
-										<img src="./assets/icons/heart.svg" alt="like">
-										<span>248.1K</span>
-									</div>
-									<div class="instagram__comments">
-										<img src="./assets/icons/commentary.svg" alt="comment">
-										<span>3</span>
-									</div>
-								</div>
-									<p class="instagram__description">Рады представить Вам новинку смарт карты - Museum Pass 🌟Museum Pass – это Ваша возможность свободного и комфортного входа во все культурные объекты столицы.Museum Pass позволяет создать удобный маршрут по изучению музеев города и сэкономить до 20% времени и средств в 2 раза.Дата запуска - 10 апреля 2023 года 😉А кого бы Вы позвали с собой в музей по нашей карте?</p>
-							</div>
-						</div>
-
-						<div class="instagram__item">
-							<div class="instagram__filter"></div>
-							<img src="./assets/images/insta_post_7.png" alt="" class="instagram__image">
-							<div class="instagram__item-content">
-								<div class="instagram__reaction">
-									<div class="instagram__likes">
-										<img src="./assets/icons/heart.svg" alt="like">
-										<span>248.1K</span>
-									</div>
-									<div class="instagram__comments">
-										<img src="./assets/icons/commentary.svg" alt="comment">
-										<span>3</span>
-									</div>
-								</div>
-									<p class="instagram__description">Рады представить Вам новинку смарт карты - Museum Pass 🌟Museum Pass – это Ваша возможность свободного и комфортного входа во все культурные объекты столицы.Museum Pass позволяет создать удобный маршрут по изучению музеев города и сэкономить до 20% времени и средств в 2 раза.Дата запуска - 10 апреля 2023 года 😉А кого бы Вы позвали с собой в музей по нашей карте?</p>
-							</div>
-						</div>
-
-						<div class="instagram__item">
-							<div class="instagram__filter"></div>
-							<img src="./assets/images/insta_post_8.png" alt="" class="instagram__image">
-							<div class="instagram__item-content">
-								<div class="instagram__reaction">
-									<div class="instagram__likes">
-										<img src="./assets/icons/heart.svg" alt="like">
-										<span>248.1K</span>
-									</div>
-									<div class="instagram__comments">
-										<img src="./assets/icons/commentary.svg" alt="comment">
-										<span>3</span>
-									</div>
-								</div>
-									<p class="instagram__description">Рады представить Вам новинку смарт карты - Museum Pass 🌟Museum Pass – это Ваша возможность свободного и комфортного входа во все культурные объекты столицы.Museum Pass позволяет создать удобный маршрут по изучению музеев города и сэкономить до 20% времени и средств в 2 раза.Дата запуска - 10 апреля 2023 года 😉А кого бы Вы позвали с собой в музей по нашей карте?</p>
-							</div>
-						</div>
-
-					</div>
-				</div>
-			</section>
+        <div class="faq">
+          <h1 class="faq__heading">FAQ</h1>
+          <div class="faq__container">
+            <div class="accordion">
+              <div class="accordion__item">
+                <div class="accordion__header">
+                  <div>
+                    <img src="./assets/icons/Artboard-Copy.svg" alt="" />
+                    <h1 class="accordion__heading">
+                      Как пользоваться картой Astana Citypass?
+                    </h1>
+                  </div>
+                  <img
+                    src="./assets/icons/arrow-down.svg"
+                    alt="open"
+                    class="accordion__arrow"
+                  />
+                </div>
+                <div class="accordion__body">
+                  <div class="accordion__content-wrapper">
+                    <div class="accordion__content">
+                      <div class="accordion__point"></div>
+                      <div class="accordion__text">
+                        Приобретите онлайн карту с QR кодом на сайте, либо
+                        пластиковую карту в пунктах продаж.
+                      </div>
+                    </div>
+                    <div class="accordion__content">
+                      <div class="accordion__point"></div>
+                      <div class="accordion__text">
+                        В течение срока действия карты (24 или 72 часа) вы
+                        сможете посетить все музеи, достопримечательности,
+                        экскурсии. Каждый объект бесплатно вы можете посетить
+                        только один раз.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion__item">
+                <div class="accordion__header">
+                  <div>
+                    <img src="./assets/icons/Artboard-Copy.svg" alt="" />
+                    <h1 class="accordion__heading">
+                      Как пользоваться картой Astana Citypass?
+                    </h1>
+                  </div>
+                  <img
+                    src="./assets/icons/arrow-down.svg"
+                    alt="open"
+                    class="accordion__arrow"
+                  />
+                </div>
+                <div class="accordion__body">
+                  <div class="accordion__content-wrapper">
+                    <div class="accordion__content">
+                      <div class="accordion__point"></div>
+                      <div class="accordion__text">
+                        Приобретите онлайн карту с QR кодом на сайте, либо
+                        пластиковую карту в пунктах продаж.
+                      </div>
+                    </div>
+                    <div class="accordion__content">
+                      <div class="accordion__point"></div>
+                      <div class="accordion__text">
+                        В течение срока действия карты (24 или 72 часа) вы
+                        сможете посетить все музеи, достопримечательности,
+                        экскурсии. Каждый объект бесплатно вы можете посетить
+                        только один раз.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion__item">
+                <div class="accordion__header">
+                  <div>
+                    <img src="./assets/icons/Artboard-Copy.svg" alt="" />
+                    <h1 class="accordion__heading">
+                      Как пользоваться картой Astana Citypass?
+                    </h1>
+                  </div>
+                  <img
+                    src="./assets/icons/arrow-down.svg"
+                    alt="open"
+                    class="accordion__arrow"
+                  />
+                </div>
+                <div class="accordion__body">
+                  <div class="accordion__content-wrapper">
+                    <div class="accordion__content">
+                      <div class="accordion__point"></div>
+                      <div class="accordion__text">
+                        Приобретите онлайн карту с QR кодом на сайте, либо
+                        пластиковую карту в пунктах продаж.
+                      </div>
+                    </div>
+                    <div class="accordion__content">
+                      <div class="accordion__point"></div>
+                      <div class="accordion__text">
+                        В течение срока действия карты (24 или 72 часа) вы
+                        сможете посетить все музеи, достопримечательности,
+                        экскурсии. Каждый объект бесплатно вы можете посетить
+                        только один раз.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <section class="section">
-				<div class="partners">
-					<div class="partners__container">
-						<h1 class="partners__heading">ПРИ ПОДДЕРЖКЕ</h1>
-						<div class="partners__icons">
-							<img src="./assets/images/partner_logo_1.png" alt="partner_1">
-							<img src="./assets/images/partner_logo_2.png" alt="partner_2">
-							<img src="./assets/images/partner_logo_3.png" alt="partner_3">
-						</div>
-					</div>
-					<div class="partners__container">
-						<h1 class="partners__heading">Партнеры</h1>
-						<div class="partners__icons">
-							<img src="./assets/images/partner_logo_4.png" alt="partner_4">
-							<img src="./assets/images/partner_logo_5.png" alt="partner_5">
-							<img src="./assets/images/partner_logo_6.png" alt="partner_6">
-						</div>
-					</div>
-				</div>
-			</section>
+        <div class="instagram">
+          <div class="instagram__heading">
+            <h1 class="instagram__header">Подписывайтесь на нас в Instagram</h1>
+            <a href="#">
+              <img
+                src="./assets/icons/instagram.svg"
+                alt="insta icon"
+                class="instagram__icon"
+              />
+            </a>
+          </div>
+          <div class="instagram__explore">
+            <div class="instagram__item">
+              <div class="instagram__filter"></div>
+              <img
+                src="./assets/images/insta_post_1.png"
+                alt=""
+                class="instagram__image"
+              />
+              <div class="instagram__item-content">
+                <div class="instagram__reaction">
+                  <div class="instagram__likes">
+                    <img src="./assets/icons/heart.svg" alt="like" />
+                    <span>248.1K</span>
+                  </div>
+                  <div class="instagram__comments">
+                    <img src="./assets/icons/commentary.svg" alt="comment" />
+                    <span>3</span>
+                  </div>
+                </div>
+                <p class="instagram__description">
+                  Рады представить Вам новинку смарт карты - Museum Pass
+                  🌟Museum Pass – это Ваша возможность свободного и комфортного
+                  входа во все культурные объекты столицы.Museum Pass позволяет
+                  создать удобный маршрут по изучению музеев города и сэкономить
+                  до 20% времени и средств в 2 раза.Пластиковая карта и онлайн
+                  карта действует 24 часа с момента первого посещения объекта.
+                  Предъявляйте смарт-карту или QR код на кассах объектов для
+                  свободного прохода.Дата запуска - 10 апреля 2023 года 😉А кого
+                  бы Вы позвали с собой в музей по нашей карте? 🪄
+                </p>
+              </div>
+            </div>
+
+            <div class="instagram__item">
+              <div class="instagram__filter"></div>
+              <img
+                src="./assets/images/insta_post_2.png"
+                alt=""
+                class="instagram__image"
+              />
+              <div class="instagram__item-content">
+                <div class="instagram__reaction">
+                  <div class="instagram__likes">
+                    <img src="./assets/icons/heart.svg" alt="like" />
+                    <span>248.1K</span>
+                  </div>
+                  <div class="instagram__comments">
+                    <img src="./assets/icons/commentary.svg" alt="comment" />
+                    <span>3</span>
+                  </div>
+                </div>
+                <p class="instagram__description">
+                  Рады представить Вам новинку смарт карты - Museum Pass
+                  🌟Museum Pass – это Ваша возможность свободного и комфортного
+                  входа во все культурные объекты столицы.Museum Pass позволяет
+                  создать удобный маршрут по изучению музеев города и сэкономить
+                  до 20% времени и средств в 2 раза.Дата запуска - 10 апреля
+                  2023 года 😉А кого бы Вы позвали с собой в музей по нашей
+                  карте?
+                </p>
+              </div>
+            </div>
+
+            <div class="instagram__item">
+              <div class="instagram__filter"></div>
+              <img
+                src="./assets/images/insta_post_3.png"
+                alt=""
+                class="instagram__image"
+              />
+              <div class="instagram__item-content">
+                <div class="instagram__reaction">
+                  <div class="instagram__likes">
+                    <img src="./assets/icons/heart.svg" alt="like" />
+                    <span>248.1K</span>
+                  </div>
+                  <div class="instagram__comments">
+                    <img src="./assets/icons/commentary.svg" alt="comment" />
+                    <span>3</span>
+                  </div>
+                </div>
+                <p class="instagram__description">
+                  Рады представить Вам новинку смарт карты - Museum Pass
+                  🌟Museum Pass – это Ваша возможность свободного и комфортного
+                  входа во все культурные объекты столицы.Museum Pass позволяет
+                  создать удобный маршрут по изучению музеев города и сэкономить
+                  до 20% времени и средств в 2 раза.Дата запуска - 10 апреля
+                  2023 года 😉А кого бы Вы позвали с собой в музей по нашей
+                  карте?
+                </p>
+              </div>
+            </div>
+
+            <div class="instagram__item">
+              <div class="instagram__filter"></div>
+              <img
+                src="./assets/images/insta_post_4.png"
+                alt=""
+                class="instagram__image"
+              />
+              <div class="instagram__item-content">
+                <div class="instagram__reaction">
+                  <div class="instagram__likes">
+                    <img src="./assets/icons/heart.svg" alt="like" />
+                    <span>248.1K</span>
+                  </div>
+                  <div class="instagram__comments">
+                    <img src="./assets/icons/commentary.svg" alt="comment" />
+                    <span>3</span>
+                  </div>
+                </div>
+                <p class="instagram__description">
+                  Рады представить Вам новинку смарт карты - Museum Pass
+                  🌟Museum Pass – это Ваша возможность свободного и комфортного
+                  входа во все культурные объекты столицы.Museum Pass позволяет
+                  создать удобный маршрут по изучению музеев города и сэкономить
+                  до 20% времени и средств в 2 раза.Дата запуска - 10 апреля
+                  2023 года 😉А кого бы Вы позвали с собой в музей по нашей
+                  карте?
+                </p>
+              </div>
+            </div>
+
+            <div class="instagram__item">
+              <div class="instagram__filter"></div>
+              <img
+                src="./assets/images/insta_post_5.png"
+                alt=""
+                class="instagram__image"
+              />
+              <div class="instagram__item-content">
+                <div class="instagram__reaction">
+                  <div class="instagram__likes">
+                    <img src="./assets/icons/heart.svg" alt="like" />
+                    <span>248.1K</span>
+                  </div>
+                  <div class="instagram__comments">
+                    <img src="./assets/icons/commentary.svg" alt="comment" />
+                    <span>3</span>
+                  </div>
+                </div>
+                <p class="instagram__description">
+                  Рады представить Вам новинку смарт карты - Museum Pass
+                  🌟Museum Pass – это Ваша возможность свободного и комфортного
+                  входа во все культурные объекты столицы.Museum Pass позволяет
+                  создать удобный маршрут по изучению музеев города и сэкономить
+                  до 20% времени и средств в 2 раза.Дата запуска - 10 апреля
+                  2023 года 😉А кого бы Вы позвали с собой в музей по нашей
+                  карте?
+                </p>
+              </div>
+            </div>
+
+            <div class="instagram__item">
+              <div class="instagram__filter"></div>
+              <img
+                src="./assets/images/insta_post_6.png"
+                alt=""
+                class="instagram__image"
+              />
+              <div class="instagram__item-content">
+                <div class="instagram__reaction">
+                  <div class="instagram__likes">
+                    <img src="./assets/icons/heart.svg" alt="like" />
+                    <span>248.1K</span>
+                  </div>
+                  <div class="instagram__comments">
+                    <img src="./assets/icons/commentary.svg" alt="comment" />
+                    <span>3</span>
+                  </div>
+                </div>
+                <p class="instagram__description">
+                  Рады представить Вам новинку смарт карты - Museum Pass
+                  🌟Museum Pass – это Ваша возможность свободного и комфортного
+                  входа во все культурные объекты столицы.Museum Pass позволяет
+                  создать удобный маршрут по изучению музеев города и сэкономить
+                  до 20% времени и средств в 2 раза.Дата запуска - 10 апреля
+                  2023 года 😉А кого бы Вы позвали с собой в музей по нашей
+                  карте?
+                </p>
+              </div>
+            </div>
+
+            <div class="instagram__item">
+              <div class="instagram__filter"></div>
+              <img
+                src="./assets/images/insta_post_7.png"
+                alt=""
+                class="instagram__image"
+              />
+              <div class="instagram__item-content">
+                <div class="instagram__reaction">
+                  <div class="instagram__likes">
+                    <img src="./assets/icons/heart.svg" alt="like" />
+                    <span>248.1K</span>
+                  </div>
+                  <div class="instagram__comments">
+                    <img src="./assets/icons/commentary.svg" alt="comment" />
+                    <span>3</span>
+                  </div>
+                </div>
+                <p class="instagram__description">
+                  Рады представить Вам новинку смарт карты - Museum Pass
+                  🌟Museum Pass – это Ваша возможность свободного и комфортного
+                  входа во все культурные объекты столицы.Museum Pass позволяет
+                  создать удобный маршрут по изучению музеев города и сэкономить
+                  до 20% времени и средств в 2 раза.Дата запуска - 10 апреля
+                  2023 года 😉А кого бы Вы позвали с собой в музей по нашей
+                  карте?
+                </p>
+              </div>
+            </div>
+
+            <div class="instagram__item">
+              <div class="instagram__filter"></div>
+              <img
+                src="./assets/images/insta_post_8.png"
+                alt=""
+                class="instagram__image"
+              />
+              <div class="instagram__item-content">
+                <div class="instagram__reaction">
+                  <div class="instagram__likes">
+                    <img src="./assets/icons/heart.svg" alt="like" />
+                    <span>248.1K</span>
+                  </div>
+                  <div class="instagram__comments">
+                    <img src="./assets/icons/commentary.svg" alt="comment" />
+                    <span>3</span>
+                  </div>
+                </div>
+                <p class="instagram__description">
+                  Рады представить Вам новинку смарт карты - Museum Pass
+                  🌟Museum Pass – это Ваша возможность свободного и комфортного
+                  входа во все культурные объекты столицы.Museum Pass позволяет
+                  создать удобный маршрут по изучению музеев города и сэкономить
+                  до 20% времени и средств в 2 раза.Дата запуска - 10 апреля
+                  2023 года 😉А кого бы Вы позвали с собой в музей по нашей
+                  карте?
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="partners">
+          <div class="partners__container">
+            <h1 class="partners__heading">ПРИ ПОДДЕРЖКЕ</h1>
+            <div class="partners__icons">
+              <img src="./assets/images/partner_logo_1.png" alt="partner_1" />
+              <img src="./assets/images/partner_logo_2.png" alt="partner_2" />
+              <img src="./assets/images/partner_logo_3.png" alt="partner_3" />
+            </div>
+          </div>
+          <div class="partners__container">
+            <h1 class="partners__heading">Партнеры</h1>
+            <div class="partners__icons">
+              <img src="./assets/images/partner_logo_4.png" alt="partner_4" />
+              <img src="./assets/images/partner_logo_5.png" alt="partner_5" />
+              <img src="./assets/images/partner_logo_6.png" alt="partner_6" />
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="footer">
-			<div class="footer__wrapper">
-
-				<div class="footer__container">
-					<div class="footer__main">
-						<div class="footer__main-item">
-							<h2 class="footer__title">Astana Pass</h2>
-							<ul class="footer__list">
-								<li class="footer__list-item"><a href="#">О городе</a></li>
-								<li class="footer__list-item"><a href="#">Как это работает</a></li>
-								<li class="footer__list-item"><a href="#">Пользовательское соглашение</a></li>
-								<li class="footer__list-item"><a href="#">3D туры</a></li>
-								<li class="footer__list-item"><a href="#">Бесплатные события</a></li>
-								<li class="footer__list-item"><a href="#">Правила оплаты</a></li>
-								<li class="footer__list-item"><a href="#">Возврат покупок</a></li>
-							</ul>
-						</div>
-						<div class="footer__main-item">
-							<h2 class="footer__title">Партнёрам</h2>
-							<ul class="footer__list">
-								<li class="footer__list-item"><a href="#">Стать партнером CityPass</a></li>
-								<li class="footer__list-item"><a href="#">Корпоративным клиентам</a></li>
-								<li class="footer__list-item"><a href="#">Проверка карты</a></li>
-							</ul>
-							<div class="footer__social">
-								<a href="#">
-									<img src="./assets/icons/youtube.svg" alt="youtube">
-								</a> 
-								<a href="#">
-									<img src="./assets/icons/instagram.svg" alt="instagram">
-								</a>
-								<a href="#">
-									<img src="./assets/icons/facebook.svg" alt="facebook">
-								</a>
-							</div>
-							<a href="#" class="subscribe-link">Подписаться на рассылку</a>
-						</div>
-						<div class="footer__main-item">
-								<h2 class="footer__title">Дополнительно</h2>
-								<ul class="footer__list">
-									<li class="footer__list-item"><a href="#">Разработка сайтов</a></li>
-									<li class="footer__list-item"><a href="#">Реклама на сайте</a></li>
-								</ul>
-						</div>
-						<div class="footer__action">
-							<div class="footer__contacts">
-								<div class="footer__contacts-item">
-									<img src="./assets/icons/sms.png" alt="email">
-									<span>info@citypass.kz</span>
-								</div>
-								<div class="footer__contacts-item">
-									<img src="./assets/icons/call.png" alt="call">
-									<span>8 7172 79-04-39</span>
-								</div>
-								<a href="#" class="call-link">
-									<img src="./assets/icons/callcalling.png" alt="call" >
-									<span>Заказать звонок</span>
-								</a>
-							</div>
-							<div class="footer__download">
-								<div class="footer__download-item">
-									<a href="#">
-										<img src="./assets/images/app_store.png" alt="Google Play">
-									</a>
-									<img src="./assets/images/QR_1.png" alt="">					
-								</div>
-								<div class="footer__download-item">
-									<a href="#">
-										<img src="./assets/images/google_play.png" alt="App ">
-									</a>
-									<img src="./assets/images/QR_2.png" alt="">					
-								</div>
-							</div>
-						</div>
-					</div>
-					<span class="footer__since">© 2023 «CityPass Kazakhstan»</span>
-				</div>
-			</div>
-			<div class="footer__banner">
-				<img src="./assets/images/footer_image.png" alt="astana_pass" >
-			</div>
-		</footer>
+      <div class="footer__wrapper">
+        <div class="footer__container">
+          <div class="footer__main">
+            <div class="footer__main-item">
+              <h2 class="footer__title">Astana Pass</h2>
+              <ul class="footer__list">
+                <li class="footer__list-item"><a href="#">О городе</a></li>
+                <li class="footer__list-item">
+                  <a href="#">Как это работает</a>
+                </li>
+                <li class="footer__list-item">
+                  <a href="#">Пользовательское соглашение</a>
+                </li>
+                <li class="footer__list-item"><a href="#">3D туры</a></li>
+                <li class="footer__list-item">
+                  <a href="#">Бесплатные события</a>
+                </li>
+                <li class="footer__list-item">
+                  <a href="#">Правила оплаты</a>
+                </li>
+                <li class="footer__list-item">
+                  <a href="#">Возврат покупок</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer__main-item">
+              <h2 class="footer__title">Партнёрам</h2>
+              <ul class="footer__list">
+                <li class="footer__list-item">
+                  <a href="#">Стать партнером CityPass</a>
+                </li>
+                <li class="footer__list-item">
+                  <a href="#">Корпоративным клиентам</a>
+                </li>
+                <li class="footer__list-item">
+                  <a href="#">Проверка карты</a>
+                </li>
+              </ul>
+              <div class="footer__social">
+                <a href="#">
+                  <img src="./assets/icons/youtube.svg" alt="youtube" />
+                </a>
+                <a href="#">
+                  <img src="./assets/icons/instagram.svg" alt="instagram" />
+                </a>
+                <a href="#">
+                  <img src="./assets/icons/facebook.svg" alt="facebook" />
+                </a>
+              </div>
+              <a href="#" class="subscribe-link">Подписаться на рассылку</a>
+            </div>
+            <div class="footer__main-item">
+              <h2 class="footer__title">Дополнительно</h2>
+              <ul class="footer__list">
+                <li class="footer__list-item">
+                  <a href="#">Разработка сайтов</a>
+                </li>
+                <li class="footer__list-item">
+                  <a href="#">Реклама на сайте</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer__action">
+              <div class="footer__contacts">
+                <div class="footer__contacts-item">
+                  <img src="./assets/icons/sms.png" alt="email" />
+                  <span>info@citypass.kz</span>
+                </div>
+                <div class="footer__contacts-item">
+                  <img src="./assets/icons/call.png" alt="call" />
+                  <span>8 7172 79-04-39</span>
+                </div>
+                <a href="#" class="call-link">
+                  <img src="./assets/icons/callcalling.png" alt="call" />
+                  <span>Заказать звонок</span>
+                </a>
+              </div>
+              <div class="footer__download">
+                <div class="footer__download-item">
+                  <a href="#">
+                    <img
+                      src="./assets/images/app_store.png"
+                      alt="Google Play"
+                    />
+                  </a>
+                  <img src="./assets/images/QR_1.png" alt="" />
+                </div>
+                <div class="footer__download-item">
+                  <a href="#">
+                    <img src="./assets/images/google_play.png" alt="App " />
+                  </a>
+                  <img src="./assets/images/QR_2.png" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="footer__since">© 2023 «CityPass Kazakhstan»</span>
+        </div>
+      </div>
+      <div class="footer__banner">
+        <img src="./assets/images/footer_image.png" alt="astana_pass" />
+      </div>
+    </footer>
     <script src="./js/main.js"></script>
   </body>
 </html>
