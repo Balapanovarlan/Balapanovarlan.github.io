@@ -38,7 +38,8 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
-ul, li {
+ul,
+li {
   list-style: none;
 }
 
@@ -46,7 +47,9 @@ ul {
   list-style-type: none;
 }
 
-a, a:link, a:visited {
+a,
+a:link,
+a:visited {
   text-decoration: none;
   cursor: pointer;
   outline: none;
@@ -87,7 +90,7 @@ button,
       -ms-flex-pack: center;
           justify-content: center;
   padding: 11px 0;
-  background-color: #00B2FF;
+  background-color: #00b2ff;
 }
 .header__info-text {
   color: white;
@@ -211,7 +214,7 @@ button,
   font-weight: 700;
 }
 .logo__heading--blue {
-  color: #00B2FF;
+  color: #00b2ff;
 }
 .logo__text {
   font-size: 12px;
@@ -219,7 +222,7 @@ button,
   text-transform: uppercase;
 }
 .logo__text--blue {
-  color: #00B2FF;
+  color: #00b2ff;
 }
 
 .nav {
@@ -249,7 +252,7 @@ button,
   transition: all 0.3s ease-in-out;
 }
 .nav__item:hover {
-  background-color: #00B2FF;
+  background-color: #00b2ff;
 }
 .nav__item:hover .nav__link {
   color: white;
@@ -279,7 +282,7 @@ button,
   transition: background-color 0.2s ease-in;
 }
 .buy__link--blue {
-  background-color: #00B2FF;
+  background-color: #00b2ff;
 }
 .buy__link--blue:hover {
   background-color: rgba(0, 178, 255, 0.65);
@@ -288,7 +291,7 @@ button,
   border-color: #111026;
 }
 .buy__link--red {
-  background-color: #F02D59;
+  background-color: #f02d59;
 }
 .buy__link--red:hover {
   background-color: rgba(240, 45, 89, 0.65);
@@ -386,7 +389,7 @@ button,
       -ms-flex-align: center;
           align-items: center;
   border-radius: 100%;
-  background-color: #00B2FF;
+  background-color: #00b2ff;
   color: white;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -489,10 +492,10 @@ button,
   font-weight: 700;
 }
 .pass__pricing--blue {
-  color: #00B2FF;
+  color: #00b2ff;
 }
 .pass__pricing--red {
-  color: #F02D59;
+  color: #f02d59;
 }
 .pass__pricing-text {
   font-size: 40px;
@@ -529,7 +532,7 @@ button,
   background-color: rgba(17, 16, 38, 0.65);
 }
 .details__link--blue {
-  background-color: #00B2FF;
+  background-color: #00b2ff;
 }
 .details__link--blue:hover {
   background-color: rgba(0, 178, 255, 0.65);
@@ -767,7 +770,7 @@ button,
   gap: 10px;
 }
 .article__date {
-  color: #A3A3A3;
+  color: #a3a3a3;
   font-size: 12px;
 }
 .article__title {
@@ -871,7 +874,7 @@ button,
   max-width: 20px;
   height: 20px;
   border-radius: 100%;
-  background-color: #00B2FF;
+  background-color: #00b2ff;
 }
 .accordion__text {
   font-size: 14px;
@@ -1046,7 +1049,7 @@ button,
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  background-color: #F6FAFF;
+  background-color: #f6faff;
 }
 .footer__wrapper {
   width: 100%;
@@ -1110,7 +1113,7 @@ button,
   gap: 20px;
 }
 .footer__list-item a {
-  color: #8BA7C8;
+  color: #8ba7c8;
 }
 .footer__social img {
   width: 24px;
@@ -1170,7 +1173,7 @@ button,
 }
 .footer__since {
   font-size: 12px;
-  color: #8BA7C8;
+  color: #8ba7c8;
 }
 
 .call-link {
@@ -1183,7 +1186,7 @@ button,
   gap: 15px;
   padding: 15px;
   border-radius: 15px;
-  background-color: #00B2FF;
+  background-color: #00b2ff;
   -webkit-transition: background-color 0.3s ease-in;
   transition: background-color 0.3s ease-in;
   color: white;
@@ -1194,16 +1197,16 @@ button,
 
 .subscribe-link {
   padding: 10px 5px;
-  border: 1px solid #8BA7C8;
+  border: 1px solid #8ba7c8;
   border-radius: 15px;
   font-size: 12px;
-  color: #8BA7C8;
+  color: #8ba7c8;
   text-align: center;
   -webkit-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
 }
 .subscribe-link:hover {
-  background-color: #8BA7C8;
+  background-color: #8ba7c8;
   color: white;
 }
 

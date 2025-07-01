@@ -142,7 +142,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-
 document.addEventListener('DOMContentLoaded', () => {
   const langToggle = document.querySelector('.header__lang-current');
   const langDropdown = document.querySelector('.header__lang-dropdown');
