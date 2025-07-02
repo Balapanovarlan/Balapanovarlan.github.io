@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-$font-min: 12px;
+$font-min: 10px;
 $font-preferred: 2vw;
 $font-max: 16px;
 $color-blue: #00b2ff;
@@ -99,13 +99,23 @@ button,
   }
 
   &__container {
-    margin: 0 auto;
-    padding: 0 20px;
-    width: 100%;
-    max-width: 1280px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+      margin: 0 auto;
+      padding: 0 20px;
+      width: 100%;
+      max-width: 1280px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @media (min-width: 768px) {
+        max-width: 720px;
+        padding: 0;
+      }
+      @media (min-width: 1024px){
+        max-width: 960px;
+      }
+      @media(min-width: 1440px){
+        max-width: 1280px;
+      }
   }
 
   &__actions {
@@ -210,6 +220,7 @@ button,
 }
 
 .nav {
+  display: none;
   color: $color-text-black;
   height: 106px;
   &__list {
@@ -219,36 +230,42 @@ button,
   }
 
   &__item {
-    display: flex;
-    align-items: center;
-    text-transform: uppercase;
-    padding: 5px 10px;
-    height: 100%;
-    transition: all 0.3s ease-in-out;
-    &:hover {
-      background-color: $color-blue;
-      .nav__link {
-        color: white;
-      }
+      display: flex;
+      align-items: center;
+      text-transform: uppercase;
+      padding: 5px 10px;
+      height: 100%;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+          background-color: $color-blue;
+          .nav__link {
+              color: white;
+            }
+        }
     }
-  }
-
-  &__link {
-    font-size: clamp(12px, 2vw, 14px);
-    transition: color 0.3s ease-in;
-    color: $color-text-black;
-  }
+    
+    &__link {
+        font-size: clamp(12px, 2vw, 14px);
+        transition: color 0.3s ease-in;
+        color: $color-text-black;
+    }
+    // @media(min-width: 768px){
+        
+    // }
+    @media(min-width: 1024px){
+        display: block;
+    }
 }
 
 .buy {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 15px;
+  padding: 10px;
   border: 2px solid transparent;
   border-radius: 15px;
   color: white;
-  font-size: clamp(20px, 2vw, 22px);
+  font-size: clamp(16px, 2vw, 22px);
   font-weight: 700;
   transition: background-color 0.2s ease-in;
   &__link--blue {
@@ -257,7 +274,7 @@ button,
       background-color: rgba($color-blue, 0.65);
     }
     &:focus {
-      border-color: #111026;
+      border-color: $color-text-black;
     }
   }
   &__link--red {
@@ -267,22 +284,33 @@ button,
     }
   }
   &:focus {
-    border-color: #111026;
+    border-color: $color-text-black;
   }
   &__link--small {
-    font-size: 18px;
+    font-size: clamp(12px, 2vw ,18px) ;
   }
 }
 
 .section {
   width: 100%;
-  max-width: 1280px;
   margin: auto;
+  padding: 0 10px;
   &__main {
     display: flex;
     flex-direction: column;
     gap: 60px;
     padding-bottom: 80px;
+  }
+  @media(min-width: 768px){
+    max-width: 720px;
+  }
+  @media(min-width: 1024px){
+    max-width: 960px;
+}
+    @media(min-width: 1440px){
+    max-width: 1280px;
+    padding-left:0 ;
+    padding-right: 0;
   }
 }
 
@@ -303,8 +331,12 @@ button,
     border-radius: 15px;
   }
   &__item {
-    flex: 0 0 80%;
+    flex: 0 0 100%;
     position: relative;
+    @media (min-width: 1024px) {
+        flex: 0 0 80%;
+    }
+
   }
   &__item--small {
     flex: 0 0 30%;
@@ -328,8 +360,8 @@ button,
   }
 
   &__nav {
-    width: 48px;
-    height: 48px;
+    width: 36px;
+    height:36px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -337,7 +369,7 @@ button,
     background-color: $color-blue;
     color: white;
     transition: all 0.3s ease;
-    font-weight: 18px;
+    font-weight: 14px;
     font-weight: 600;
     &:hover {
       background-color: deepskyblue;
@@ -352,6 +384,11 @@ button,
     &--next {
       right: 0;
     }
+    @media(min-width: 1024px){
+        width: 48px;
+        height: 48px;
+        font-weight: 18px;
+    }
   }
   &__nav.disabled {
     background-color: gainsboro;
@@ -365,15 +402,7 @@ button,
       gap: 21px;
     }
   }
-  //  &--banner {
-  //         .slider__content {
-  //         position: absolute;
-  //         bottom: 10%;
-  //         left: 5%;
-  //         max-width: 500px;
-  //         color: white;
-  //         }
-  //   }
+
 }
 
 .visit {
@@ -395,16 +424,23 @@ button,
 .pass {
   &__container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     // gap: 10px;
-  }
+    @media(min-width: 1024px){
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+   }
   &__item {
     display: flex;
     flex-direction: column;
     gap: 44px;
+    width: 100%;
   }
   &__image {
-    width: 426px;
+    width: 100%;
+    
   }
   &__content {
     display: flex;
@@ -473,9 +509,8 @@ button,
 
 .about {
   display: flex;
-  align-items: start;
-  justify-content: space-between;
-
+  flex-direction: column;
+  align-items: center;
   &__item {
     max-width: 400px;
     display: flex;
@@ -502,6 +537,10 @@ button,
     width: 100%;
     max-width: 230px;
   }
+  @media(min-width: 1024px){
+    flex-direction: row;
+    align-items: center;
+  }
 }
 
 .popular {
@@ -522,7 +561,14 @@ button,
   }
   &__collection {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    @media(min-width: 768px){
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+
   }
   &__item {
     width: 100%;
@@ -591,8 +637,15 @@ button,
   &__heading {
     width: 100%;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    // justify-content: space-between;
+    // align-items: center;
+    @media( min-width: 768px) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
   }
   &__typography {
     display: flex;
@@ -806,11 +859,14 @@ button,
 
 .partners {
   display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
   &__container {
     width: 100%;
-    max-width: 625px;
+    height: 100%;
+    min-height: 232px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -818,14 +874,28 @@ button,
     padding: 47px 0;
     border-radius: 15px;
     box-shadow: 0px 6px 10px rgba($color-gray-light, 0.65);
+    @media(min-width: 768px){
+        max-width: 615px;
+    }
   }
   &__icons {
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
     padding: 0 10px;
+   
   }
+  @media(min-width: 1024px){
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+  }
+  @media(min-width: 1440px){
+    flex-wrap: nowrap;
+  }
+
 }
 
 .footer {
@@ -851,15 +921,25 @@ button,
   &__main {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    flex-wrap: wrap;
     font-size: 14px;
     gap: 20px;
     &-item {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      flex: 1;
-      min-width: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        flex: 1;
+        min-width: 0;
+    }
+    @media(min-width: 768px){
+        flex-direction: row;
+        flex-wrap: wrap;
+
+    }
+    @media(min-width: 1024px){
+        flex-direction: row;
+        justify-content: space-between;
     }
   }
   &__list {
@@ -901,11 +981,15 @@ button,
     }
   }
   &__banner {
+    display: none;
     width: 30dvw;
     height: 100%;
     overflow: hidden;
     img {
       object-fit: cover;
+    }
+    @media(min-width: 1440px){
+        display: block;
     }
   }
   &__since {
