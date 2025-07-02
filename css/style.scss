@@ -219,6 +219,21 @@ button,
   }
 }
 
+.burger-menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30px;
+    gap: 5px;
+    cursor: pointer;
+    span{
+        width: 100%;
+        height: 3px;
+        background-color: $color-text-black;
+        border-radius: 2px;
+    }
+}
+
 .nav {
   display: none;
   color: $color-text-black;
