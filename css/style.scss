@@ -243,7 +243,7 @@ justify-content: center;
     cursor: pointer;
     display: inline-block;
 
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
       display: none; 
     }
   }
@@ -294,14 +294,14 @@ justify-content: center;
     width: 0;
     transition: width .3s ease;
     .is-open & {
-      width: 15rem;
+      width: 10rem;
     }
 
      &--sidebar &__input {
     width: 100% !important;
   }
   }
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     display: flex;
     &__toggle , &__close{
         display: block;
@@ -529,9 +529,13 @@ justify-content: center;
 .sidebar-actions {
   display: flex;
   flex-direction: column;
-  align-items: baseline;
+  align-items: center;
   gap: 10px;
   margin-top: 10px;
+  &__location{
+    display: flex;
+    align-items: center;
+  }
 }
 
 // Language switcher
