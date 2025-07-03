@@ -43,13 +43,22 @@ class Slider {
     this.slides = Array.from(this.track.children);
   }
 
+  getSlideWidth() {
+    // Определяем режим отображения на основе реальной ширины элемента
+    const isMobile = window.innerWidth < 1024;
+    const isMulti = this.slider.classList.contains('slider--multi');
+    
+    if (isMobile) return this.slider.clientWidth; // 100% для мобильных
+    return this.slider.clientWidth * (isMulti ? 0.33 : 0.80); // 33% или 80% для десктопа
+  }
+
   update() {
-    // определяем ширину слайда: 80% или 33% (или маленький — flex:0 0 XX%)
-    const baseRatio = this.slider.classList.contains('slider--multi') ? 0.33 : 0.80;
-    this.slideWidth = this.slider.clientWidth * baseRatio;
+    this.slideWidth = this.getSlideWidth(); // Используем новую функцию
+    const gap = parseFloat(getComputedStyle(this.track).gap) || 0;
+    this.step = this.slideWidth + gap;
 
     this.track.style.transition = 'transform .5s ease';
-    this.track.style.transform  = `translateX(${-this.currentIndex * this.slideWidth}px)`;
+    this.track.style.transform = `translateX(${-this.currentIndex * this.step}px)`;
   }
 
   onTransitionEnd() {
@@ -65,7 +74,7 @@ class Slider {
         this.track.style.transition = 'none';
         this.currentIndex = 1;
       }
-      this.track.style.transform = `translateX(${-this.currentIndex * this.slideWidth}px)`;
+      this.track.style.transform = `translateX(${-this.currentIndex * this.step}px)`;
     }
 
     this.updateNavButtons();
@@ -143,6 +152,28 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
+  const burgerBtn = document.querySelector('.burger-menu');
+  const sidebar = document.querySelector('.sidebar');
+  const overlay = document.querySelector('.sidebar__overlay');
+  const sidebarCloseBtn = document.querySelector('.sidebar__btn-close');
+
+  burgerBtn.addEventListener('click' , ()=> {
+    sidebar.classList.add('sidebar--active');
+    sidebar.classList.remove('sidebar--hidden');
+  })
+
+  sidebarCloseBtn.addEventListener('click', ()=> {
+    sidebar.classList.remove('sidebar--active');
+    sidebar.classList.add('sidebar--hidden');  
+  })
+
+  overlay.addEventListener('click', () => {
+  sidebar.classList.remove('sidebar--active');
+  sidebar.classList.add('sidebar--hidden');
+  });
+})
+
+document.addEventListener('DOMContentLoaded', () => {
   const langToggle = document.querySelector('.header__lang-current');
   const langDropdown = document.querySelector('.header__lang-dropdown');
   const langOptions = document.querySelectorAll('.header__lang-option');
@@ -171,6 +202,51 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!e.target.closest('.header__lang')) {
       langDropdown.classList.remove('is-open');
       langToggle.classList.remove('is-open');
+    }
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.expanding-search').forEach(block => {
+    const toggleBtn = block.querySelector('.expanding-search__toggle');
+    const form      = block.querySelector('.expanding-search__form');
+    const input     = block.querySelector('.expanding-search__input');
+    const closeBtn  = block.querySelector('.expanding-search__close');
+
+    function openSearch() {
+      form.classList.add('is-open');
+      input.focus();
+      document.addEventListener('click', onOutsideClick);
+      document.addEventListener('keydown', onEscPress);
+    }
+
+    function closeSearch() {
+      form.classList.remove('is-open');
+      input.value = '';
+      document.removeEventListener('click', onOutsideClick);
+      document.removeEventListener('keydown', onEscPress);
+    }
+
+    function onOutsideClick(e) {
+      if (!block.contains(e.target)) closeSearch();
+    }
+
+    function onEscPress(e) {
+      if (e.key === 'Escape') closeSearch();
+    }
+
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', e => {
+        e.stopPropagation();
+        form.classList.contains('is-open') ? closeSearch() : openSearch();
+      });
+    }
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', e => {
+        e.preventDefault();
+        closeSearch();
+      });
     }
   });
 });

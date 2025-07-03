@@ -13,10 +13,11 @@ $color-red: #f02d59;
 $color-gray-light: #a3a3a3;
 $color-footer-background: #f6faff;
 $color-footer-text: #8ba7c8;
+$color-bg-main: #EFEFEF;
 
 @font-face {
   font-family: "Montserrat";
-  src: url("../assets/fonts/montserrat-regular.woff2") format("woff2");
+  src: url("../assets/fonts/Montserrat-Regular.woff2") format("WOFF2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -24,7 +25,7 @@ $color-footer-text: #8ba7c8;
 
 @font-face {
   font-family: "Montserrat";
-  src: url("../assets/fonts/Montserrat-SemiBold.woff2") format("woff2");
+  src: url("../assets/fonts/Montserrat-SemiBold.ttf") format("ttf");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -32,14 +33,14 @@ $color-footer-text: #8ba7c8;
 
 @font-face {
   font-family: "Montserrat";
-  src: url("../assets/fonts/montserrat-bold.woff2") format("woff2");
+  src: url("../assets/fonts/Montserrat-Bold.woff2") format("WOFF2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Montserrat";
-  src: url("../assets/fonts/montserrat-light.woff2") format("woff2");
+  src: url("../assets/fonts/montserrat-light.woff2") format("WOFF2");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -89,39 +90,63 @@ button,
   &__info {
     display: flex;
     justify-content: center;
-    padding: 11px 0;
+    padding: 11px 5px;
     background-color: $color-blue;
   }
 
   &__info-text {
     color: white;
     font-size: clamp($font-min, $font-preferred, $font-max);
+    text-align: center;
   }
 
   &__container {
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 15px 20px;
       width: 100%;
       max-width: 1280px;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      flex-direction: column;
+      gap: 10px;
+      &-main{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
       @media (min-width: 768px) {
         max-width: 720px;
-        padding: 0;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
       }
       @media (min-width: 1024px){
         max-width: 960px;
+        padding-top:0;
+        padding-bottom: 0;
+        justify-content: space-between;
+        gap:0;
       }
       @media(min-width: 1440px){
         max-width: 1280px;
       }
-  }
+    }
+
 
   &__actions {
     display: flex;
     align-items: center;
     gap: 15px;
+  }
+
+//   &__search{
+//     display: none;
+//     padding: 5px;
+//   } 
+
+  &__location{
+    display: none;
+    padding: 5px;
   }
 
   &__lang {
@@ -193,30 +218,105 @@ button,
       }
     }
   }
+  @media(min-width: 768px){
+    &__search , &__location {
+        display: block;
+    }
+  }
 }
 
-.logo {
-  display: flex;
-  flex-direction: column;
-  // gap: 2px;
-  padding: 21px 0;
 
-  &__heading {
-    font-size: clamp(22px, 2vw, 28px);
-    color: $color-text-black;
-    font-weight: 700;
+.expanding-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+justify-content: center;
+  &__header{
+    display: none;
   }
-  &__heading--blue {
-    color: $color-blue;
+
+   &__submit {
+    background: none;
+    border: none;
+    padding: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: inline-block;
+
+    @media (min-width: 768px) {
+      display: none; 
+    }
   }
-  &__text {
-    font-size: 12px;
-    color: $color-text-black;
-    text-transform: uppercase;
+
+  &__toggle,
+  &__close {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 5px;
   }
-  &__text--blue {
-    color: $color-blue;
+
+   &--sidebar &__form {
+    position: static;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
   }
+
+  &__form {
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    transform: translateY(-50%) translateX(10px);
+    display: flex;
+    align-items: center;
+    background: white;
+    border: 1px solid $color-blue;
+    border-radius: 4px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s ease, transform .3s ease;
+
+    &.is-open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(-50%) translateX(0);
+    }
+  }
+
+  &__input {
+    border: none;
+    padding: 7px 15px;
+    font-size: 1rem;
+    outline: none;
+    width: 0;
+    transition: width .3s ease;
+    .is-open & {
+      width: 15rem;
+    }
+
+     &--sidebar &__input {
+    width: 100% !important;
+  }
+  }
+  @media (min-width: 768px) {
+    display: flex;
+    &__toggle , &__close{
+        display: block;
+    }
+  }
+}
+
+.logo{
+    cursor: pointer;
+    width: 100%;
+    max-width: 147px;
+    min-width: 100px;
+    &__image{
+        width: 100%;
+    }
 }
 
 .burger-menu{
@@ -231,6 +331,9 @@ button,
         height: 3px;
         background-color: $color-text-black;
         border-radius: 2px;
+    }
+    @media(min-width: 1024px){
+        display: none;
     }
 }
 
@@ -258,15 +361,11 @@ button,
             }
         }
     }
-    
     &__link {
-        font-size: clamp(12px, 2vw, 14px);
+        font-size: clamp(10px, 1vw, 14px);
         transition: color 0.3s ease-in;
         color: $color-text-black;
     }
-    // @media(min-width: 768px){
-        
-    // }
     @media(min-width: 1024px){
         display: block;
     }
@@ -275,12 +374,13 @@ button,
 .buy {
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+  gap: 10px;    
   padding: 10px;
   border: 2px solid transparent;
   border-radius: 15px;
   color: white;
-  font-size: clamp(16px, 2vw, 22px);
+  font-size: clamp(14px, 1vw, 20px);
   font-weight: 700;
   transition: background-color 0.2s ease-in;
   &__link--blue {
@@ -329,12 +429,159 @@ button,
   }
 }
 
+.sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100dvh;
+    width: 100%;
+    z-index: 100;
+    transform: translateX(-100%);
+    transition: transform .3s ease;
+    display: flex;
+    &__container{
+        background-color: white;
+        width: 100%;
+        padding: 50px;
+        z-index: 101;
+        position: relative;
+    }
+    &__overlay{
+        content: "";
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(black, 0.05);
+        z-index: 100;
+        display: none;
+    }
+    &__btn-close{
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        padding: 5px 10px;
+        border-radius: 100%;
+        transition: background-color .3s ease-in;
+        &:hover{
+            background-color: rgba(black, 0.2);
+        }
+    }
+    &__search{
+        display: flex;
+    }
+    &--active{
+        transform: translateX(0);
+        .sidebar-overlay{
+            display: block;
+        }
+    }
+    &--hidden{
+        display: none;
+    }
+    
+    @media (min-width: 768px) {
+        &__container{
+            width: 50%;
+        }
+        &__overlay{
+            display: flex;
+        }
+    }
+
+}
+
+.sidebar-nav {
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__item {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    border-radius: 7px;
+    transition: background-color .3s ease-in-out;
+    &:hover{
+        background-color: $color-blue;
+        .sidebar-nav__link{
+            color: white;
+        }
+    }
+
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $color-text-black;
+    font-weight: 500;
+    transition: color .3s ;
+
+  }
+}
+
+// Actions
+.sidebar-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+// Language switcher
+.sidebar-lang {
+  position: relative;
+
+  &__current {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+  }
+
+  &__dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    display: none;
+    flex-direction: column;
+    z-index: 1002;
+  }
+
+  &__option {
+    padding: 8px 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #f2f2f2;
+    }
+  }
+
+  &--open &__dropdown {
+    display: flex;
+  }
+}
+
 .slider {
   position: relative;
   overflow: hidden;
   width: 100%;
+  border-radius: 15px;
   &__track {
     display: flex;
+    gap: 15px;
     transition: transform 0.5s ease;
   }
   &__image {
@@ -342,19 +589,22 @@ button,
     height: 100%;
     max-width: 1000px;
     max-height: 400px;
-    object-fit: cover;
+    object-fit:cover;
     border-radius: 15px;
   }
   &__item {
     flex: 0 0 100%;
     position: relative;
     @media (min-width: 1024px) {
-        flex: 0 0 80%;
+        flex: 0 0 78%;
     }
-
+    
   }
   &__item--small {
-    flex: 0 0 30%;
+    flex: 0 0 100%;
+    @media(min-width: 768px){
+        flex: 0 0 33%;
+    }
   }
   &__content {
     position: absolute;
@@ -366,11 +616,11 @@ button,
     color: white;
   }
   &__title {
-    font-size: 48px;
+    font-size:clamp(20px, $font-preferred , 48px);
     font-weight: 700;
   }
   &__text {
-    color: slategrey;
+    color: white;
     max-width: 700px;
   }
 
@@ -426,7 +676,7 @@ button,
   transition: background-color 0.3s ease;
   border-radius: 15px;
   color: white;
-  font-size: 20px;
+  font-size: clamp(12px , $font-preferred, 20px);
   font-weight: 700;
   &--black {
     background-color: $color-text-black;
@@ -468,7 +718,7 @@ button,
     gap: 24px;
   }
   &__text {
-    font-size: 12px;
+    font-size: clamp(10px , $font-preferred , 12px);
   }
   &__title {
     text-transform: uppercase;
@@ -484,15 +734,15 @@ button,
     color: $color-red;
   }
   &__pricing-text {
-    font-size: 40px;
+    font-size: clamp(20px , $font-preferred, 40px) ;
     font-weight: 700;
   }
   &__price {
-    font-size: 40px;
+    font-size:  clamp(20px , $font-preferred, 40px);
     font-weight: 300;
   }
   &__currency {
-    font-size: 14px;
+    font-size: clamp(12px, $font-preferred, 14px) ;
   }
 }
 
@@ -526,6 +776,7 @@ button,
   display: flex;
   flex-direction: column;
   align-items: center;
+
   &__item {
     max-width: 400px;
     display: flex;
@@ -538,7 +789,7 @@ button,
   &__heading {
     margin-bottom: 10px;
     text-align: center;
-    font-size: 24px;
+    font-size: clamp(20px, $font-preferred, 24px) ;
     text-transform: uppercase;
     font-weight: 600;
   }
@@ -555,6 +806,7 @@ button,
   @media(min-width: 1024px){
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
   }
 }
 
@@ -568,16 +820,17 @@ button,
     gap: 15px;
   }
   &__header {
-    font-size: 32px;
+    font-size: clamp(24px,$font-preferred,32px);
     font-weight: 600;
   }
   &__text {
-    font-size: 20px;
+    font-size: clamp( 16px,$font-preferred,20px) ;
   }
   &__collection {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 10px;
     @media(min-width: 768px){
         flex-direction: row;
         justify-content: space-between;
@@ -590,11 +843,14 @@ button,
     max-width: 300px;
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 15px;
     &-status {
       display: flex;
       align-items: center;
       gap: 15px;
+    }
+    &-title{
+        font-size: clamp(12px, $font-preferred, 14px);
     }
   }
 
@@ -680,7 +936,7 @@ button,
   transition: all 0.3s ease;
   background-color: $color-text-black;
   color: white;
-  font-size: 18px;
+  font-size: clamp(14px,$font-preferred ,18px) ;
   font-weight: bold;
   &:hover {
     background-color: rgba($color-text-black, 0.65);
@@ -714,13 +970,8 @@ button,
   flex-direction: column;
   gap: 30px;
   &__heading {
-    font-size: 32px;
+    font-size: clamp( 28px, $font-preferred,32px) ;
   }
-  // &__container{
-  //     border-radius: 15px;
-  //     box-shadow: 0 6px 10px rgba($color-gray-light, 0.65);
-  //     padding: 28px 28px;
-  // }
 }
 
 .accordion {
@@ -748,7 +999,7 @@ button,
     transition: transform 0.7s ease-in-out;
   }
   &__heading {
-    font-size: 20px;
+    font-size: clamp(12px , $font-preferred, 20px);
     font-weight: 600;
   }
   &__body {
@@ -794,6 +1045,7 @@ button,
   &__header {
     text-transform: uppercase;
     font-weight: 600;
+    font-size: clamp(14px, $font-preferred, 24px);
   }
   &__explore {
     display: flex;
@@ -900,6 +1152,9 @@ button,
     align-items: center;
     justify-content: space-around;
     padding: 0 10px;
+    img{
+        padding: 5px 0;
+    }
    
   }
   @media(min-width: 1024px){

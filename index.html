@@ -7,7 +7,7 @@
     <title>Document</title>
   </head>
   <body>
-    <header class="header ">
+    <header class="header">
       <div class="header__info">
         <p class="header__info-text">
           График работы достопримечательностей смотрите в разделе «Сегодня
@@ -15,58 +15,91 @@
         </p>
       </div>
       <div class="header__container">
-        <a href="#" class="logo">
-          <span class="logo__heading">
-            CITY<span class="logo__heading--blue">PASS</span>
-          </span>
-          <span class="logo__text">единый билет туриста</span>
-          <span class="logo__text logo__text--blue">по городу Астана</span>
-        </a>
-        <nav class="nav">
-          <ul class="nav__list">
-            <li class="nav__item">
-              <a href="#" class="nav__link">Astana Pass</a>
-            </li>
-            <li class="nav__item">
-              <a href="#" class="nav__link">museum Pass</a>
-            </li>
-            <li class="nav__item">
-              <a href="#" class="nav__link">Куда сходить</a>
-            </li>
-            <li class="nav__item">
-              <a href="#" class="nav__link">Куда сходить</a>
-            </li>
-            <li class="nav__item"><a href="#" class="nav__link">Туристу</a></li>
-            <li class="nav__item"><a href="#" class="nav__link">Новости</a></li>
-          </ul>
-        </nav>
-        <div class="header__actions">
-          <button class="header__search">
-            <img src="./assets/icons/search.svg" alt="search button" />
-          </button>
-          <button class="header__location">
-            <img src="./assets//icons/location.svg" alt="location" />
-          </button>
-          <div class="header__lang">
-            <button class="header__lang-current">
-              <span class="header__lang-text">РУС</span>
-              <img
-                src="./assets/icons/arrow-down.svg"
-                alt="open lang"
-                class="header__lang-arrow"
-              />
+        <div class="header__container-main">
+          <a href="#" class="logo">
+            <img
+              src="./assets/icons/logo.webp"
+              alt="logo"
+              class="logo__image"
+            />
+          </a>
+          <nav class="nav">
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a href="#" class="nav__link">Astana Pass</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">museum Pass</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">Куда сходить</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">Куда сходить</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">Туристу</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">Новости</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="header__actions">
+            <div class="expanding-search expanding-search__header">
+              <button
+                type="button"
+                class="expanding-search__toggle"
+                aria-label="Открыть поиск"
+              >
+                <img src="./assets/icons/search.svg" alt="Search" />
+              </button>
+              <form
+                action="/search"
+                method="get"
+                class="expanding-search__form"
+                novalidate
+              >
+                <input
+                  type="text"
+                  name="q"
+                  class="expanding-search__input"
+                  placeholder="Поиск…"
+                  autocomplete="off"
+                />
+                <button
+                  type="button"
+                  class="expanding-search__close"
+                  aria-label="Закрыть поиск"
+                >
+                  ×
+                </button>
+              </form>
+            </div>
+            <button class="header__location">
+              <img src="./assets//icons/location.svg" alt="location" />
             </button>
-            <div class="header__lang-dropdown">
-              <button class="header__lang-option" data-lang="KZ">ҚАЗ</button>
-              <button class="header__lang-option" data-lang="RU">РУС</button>
-              <button class="header__lang-option" data-lang="EN">ENG</button>
+            <div class="header__lang">
+              <button class="header__lang-current">
+                <span class="header__lang-text">РУС</span>
+                <img
+                  src="./assets/icons/arrow-down.svg"
+                  alt="open lang"
+                  class="header__lang-arrow"
+                />
+              </button>
+              <div class="header__lang-dropdown">
+                <button class="header__lang-option" data-lang="KZ">ҚАЗ</button>
+                <button class="header__lang-option" data-lang="RU">РУС</button>
+                <button class="header__lang-option" data-lang="EN">ENG</button>
+              </div>
+            </div>
+            <div class="burger-menu">
+              <span></span>
+              <span></span>
+              <span></span>
             </div>
           </div>
-		  <div class="burger-menu">
-			<span></span>
-			<span></span>
-			<span></span>
-		  </div>
         </div>
         <a href="#" class="buy buy__link--blue">
           <span>Купить</span>
@@ -75,7 +108,7 @@
       </div>
     </header>
     <main class="section section__main">
-      <section class="section ">
+      <section class="section">
         <div class="slider">
           <div class="slider__track">
             <div class="slider__item">
@@ -88,7 +121,7 @@
             <div class="slider__item">
               <img
                 class="slider__image"
-                src="./assets/images/main_slider_2.webp"
+                src="./assets/images/banner_2.webp"
                 alt="Slider item"
               />
               <div class="slider__content">
@@ -303,7 +336,9 @@
                 <a href="#" class="details details__link--blue">Подробнее</a>
               </div>
             </div>
-            <h3>Водные прогулки на теплоходах по реке Ишим</h3>
+            <h3 class="popular__item-title">
+              Водные прогулки на теплоходах по реке Ишим
+            </h3>
           </div>
 
           <div class="popular__item">
@@ -848,6 +883,67 @@
         </div>
       </section>
     </main>
+    <aside class="sidebar sidebar--hidden">
+      <div class="sidebar__overlay"></div>
+      <div class="sidebar__container">
+        <button class="sidebar__btn-close">X</button>
+        <div class="expanding-search expanding-search--sidebar">
+          <form class="expanding-search__form is-open">
+            <input
+              type="text"
+              class="expanding-search__input"
+              placeholder="Поиск..."
+            />
+            <button
+              type="button"
+              class="expanding-search__close"
+              aria-label="Закрыть"
+            >
+              ×
+            </button>
+            <button
+              type="submit"
+              class="expanding-search__submit"
+              aria-label="Найти"
+            >
+            <img src="./assets/icons/search.svg" alt="Search" />
+            </button>
+          </form>
+
+          <button
+            type="button"
+            class="expanding-search__toggle"
+            aria-label="Открыть поиск"
+          >
+            <img src="./assets/icons/search.svg" alt="Search" />
+          </button>
+        </div>
+        <nav class="sidebar-nav">
+          <ul class="sidebar-nav__list">
+            <li class="sidebar-nav__item">
+              <a href="#" class="sidebar-nav__link">Astana Pass</a>
+            </li>
+            <li class="sidebar-nav__item">
+              <a href="#" class="sidebar-nav__link">Museum Pass</a>
+            </li>
+            <li class="sidebar-nav__item">
+              <a href="#" class="sidebar-nav__link">Куда сходить</a>
+            </li>
+            <li class="sidebar-nav__item">
+              <a href="#" class="sidebar-nav__link">Туристу</a>
+            </li>
+            <li class="sidebar-nav__item">
+              <a href="#" class="sidebar-nav__link">Новости</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="sidebar-actions">
+          <button class="sidebar-actions__location">
+            <img src="./assets/icons/location.svg" alt="location" />
+          </button>
+        </div>
+      </div>
+    </aside>
 
     <footer class="footer">
       <div class="footer__wrapper">
