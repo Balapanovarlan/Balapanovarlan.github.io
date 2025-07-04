@@ -206,6 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.expanding-search').forEach(block => {
     const toggleBtn = block.querySelector('.expanding-search__toggle');
